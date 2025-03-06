@@ -72,7 +72,7 @@
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.11</Version>
-      <Description>env (Python 3.11 (64-bit))</Description>
+      <Description>env (Python 3.11)</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
