@@ -9,7 +9,7 @@
     <button style="width:142px;margin-top:10px;background-color: #ff0033" onclick="hideModal()">Exit</button>
 </div>
 
-<div class="jumbotron" style ="height: 3900px">
+<div class="jumbotron" style ="height: 4000px">
     <h1>Category</h1>
     <hr/>
     <div class="d-flex align-items-center">
@@ -469,4 +469,22 @@
 
 </script>
 
+<div class="row">
+    <div class="col-md-4">
+        <h2>How to choose a PC</h2>
+        <p>
+            In order to choose a PC for yourself, you need to decide what you want to have under hardware. 
+            It is worth paying attention to such components as: processor, graphics card, motherboard and power supply. 
+            The help will help you decide on the components.
+        </p>
+        <p><a class="btn btn-default" href="https://www.dns-shop.ru/guide/17a8932c-1640-11e5-a679-00259074e77d/?ysclid=m820kt5a4e89129318">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Caring for machinery</h2>
+        <p>It is necessary to monitor the cleanliness and condition of Your equipment. 
+        The performance of the PC and the shelf life of the components directly depend on this. 
+        You can find out how to take care of the equipment in the help.</p>
+        <p><a class="btn btn-default" href="https://club.dns-shop.ru/blog/t-90-kompyuteryi/73733-kak-uhajivat-za-tsifrovoi-tehnikoi-i-nichego-ne-slomat-v-protsess/?ysclid=m820o1zhvs607605979">Learn more &raquo;</a></p>
+    </div>
+</div>
 
