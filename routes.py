@@ -34,17 +34,6 @@ def about():
         year=datetime.now().year
     )
 
-<<<<<<< HEAD
-@route('/constructor')
-@view('constructor')
-def constructor():
-    """Renders the contact page."""
-    return dict(
-        title='constructor',
-        message='Constructor is here.',
-        year=datetime.now().year
-    )
-=======
 @route('/auth')
 @view('auth')
 def auth():
@@ -79,4 +68,3 @@ def do_login():
 def logout():
     response.delete_cookie('username')
     redirect('/auth')
->>>>>>> dacadd5b3548a9b9d0e4da1159b459ccbd5d979e
