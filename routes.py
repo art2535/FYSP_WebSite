@@ -68,3 +68,13 @@ def do_login():
 def logout():
     response.delete_cookie('username')
     redirect('/auth')
+    
+@route('/constructor')
+@view('constructor')
+def constructor():
+    """Renders the PC Builder page."""
+    return dict(
+        title='PC Builder',
+        year=datetime.now().year
+    )
+    
