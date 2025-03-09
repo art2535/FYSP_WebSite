@@ -33,3 +33,13 @@ def about():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/constructor')
+@view('constructor')
+def constructor():
+    """Renders the contact page."""
+    return dict(
+        title='constructor',
+        message='Constructor is here.',
+        year=datetime.now().year
+    )
