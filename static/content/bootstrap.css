@@ -58,13 +58,13 @@ html {
 }
 
 @font-face {
-    font-family: 'abosanovadcfr';
-    src: url('../fonts/abosanovadcfr.ttf') format('truetype');
+    font-family: 'Share-Tech-CYR-Bold';
+    src: url('../fonts/Share-Tech-CYR-Bold.otf') format('truetype');
 }
 
 .navbar-brand {
     color: #333;
-    font-family: 'abosanovadcfr', sans-serif; /* Используйте ваш шрифт */
+    font-family: 'Share-Tech-CYR-Bold', sans-serif;
     font-weight: bold;
 }
 
