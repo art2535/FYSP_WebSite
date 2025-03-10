@@ -1,13 +1,13 @@
 % rebase('layout.tpl', title='PC Builder', year=year)
 
 <div class="jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
-    <div>
+    <div style="margin-left: 20px;">
         <h1>Сборка ПК</h1>
-        <p class="lead">Создайте свой идеальный компьютер, выбирая из лучших комплектующих.</p>
-        <p><a href="/home" class="btn" style="background-color: #fdf5e6; color: black;">Перейти в каталог</a></p>
+        <p class="lead">Создайте свой идеальный компьютер, выбирая из лучших комплектующих!</p>
     </div>
     <img src="/static/resources/logo.png" alt="Constructor Logo" style="max-width: 200px; height: auto; margin-left: 20px;">
 </div>
+
 
 
 <div class="row">
@@ -17,9 +17,6 @@
         <select class="form-control" id="cpu-select">
             <option value="">Выберите процессор</option>
             <option value="intel_i5">Intel Core i5</option>
-            <option value="intel_i7">Intel Core i7</option>
-            <option value="amd_ryzen_5">AMD Ryzen 5</option>
-            <option value="amd_ryzen_7">AMD Ryzen 7</option>
         </select>
     </div>
     <div class="col-md-4">
@@ -28,8 +25,6 @@
         <select class="form-control" id="motherboard-select">
             <option value="">Выберите материнскую плату</option>
             <option value="asus_rog">ASUS ROG Strix</option>
-            <option value="msi_b450">MSI B450</option>
-            <option value="gigabyte_b550">Gigabyte B550</option>
         </select>
     </div>
     <div class="col-md-4">
@@ -38,8 +33,6 @@
         <select class="form-control" id="gpu-select">
             <option value="">Выберите видеокарту</option>
             <option value="nvidia_gtx_1660">NVIDIA GTX 1660</option>
-            <option value="nvidia_rtx_3060">NVIDIA RTX 3060</option>
-            <option value="amd_rx_6700">AMD RX 6700</option>
         </select>
     </div>
 </div>
@@ -51,8 +44,6 @@
         <select class="form-control" id="ram-select">
             <option value="">Выберите оперативную память</option>
             <option value="8gb_ddr4">8GB DDR4</option>
-            <option value="16gb_ddr4">16GB DDR4</option>
-            <option value="32gb_ddr4">32GB DDR4</option>
         </select>
     </div>
     <div class="col-md-4">
@@ -61,8 +52,6 @@
         <select class="form-control" id="storage-select">
             <option value="">Выберите накопитель</option>
             <option value="ssd_256gb">SSD 256GB</option>
-            <option value="ssd_512gb">SSD 512GB</option>
-            <option value="hdd_1tb">HDD 1
         </select>
     </div>
     <div class="col-md-4">
@@ -71,8 +60,6 @@
         <select class="form-control" id="case-select">
             <option value="">Выберите корпус</option>
             <option value="mid_tower">Mid Tower</option>
-            <option value="full_tower">Full Tower</option>
-            <option value="mini_tower">Mini Tower</option>
         </select>
     </div>
 </div>
@@ -97,15 +84,19 @@
     </div>
 </div>
 
-<div class="d-flex align-items-center justify-content-center jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px;">
-    <div class="text-center">
-        <h2>Сумма ПК: ???</h2>
-        <p>
-    <a href="#payment" class="btn btn-large btn-lg" style="background-color: #fdf5e6; color: black; margin-top: 10px;">Перейти к оплате</a>
-</p>
-
+    <div class="d-flex align-items-center justify-content-center jumbotron" style="background-color: orange; color: white; margin-top: 40px; padding: 20px;">
+        <div class="text-center">
+            <div style="background-color: #ffcc80; border-radius: 15px; padding: 20px; display: inline-block;"> 
+                <h2 style="margin: 0;">Сумма сборки ПК: ???</h2>
+            </div>
+            <p>
+                <a href="#payment" class="btn btn-large btn-lg" style="background-color: #fdf5e6; color: #333; margin-top: 20px;">Перейти к оплате</a>
+            </p>
+        </div>
     </div>
-</div>
+
+
+
 
 <script>
 function selectComponent(selectId) {
