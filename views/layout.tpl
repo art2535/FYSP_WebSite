@@ -11,25 +11,27 @@
 
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" style="background: linear-gradient(to right, #F8D568, #FFA000);">
-        <div class="container" style="background: transparent;">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand" style="color: #333; font-family: Algerian;">Online PC Constructor</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/home" style="color: #333; font-family: Algerian;">Home</a></li>
-                    <li><a href="/auth" style="color: #333; font-family: Algerian;">Authorization/Registration</a></li>
-                    <li><a href="/constructor" style="color: #333; font-family: Algerian;">Online Constructor</a></li>
-                    <li><a href="/profile" style="color: #333; font-family: Algerian;">Profile</a></li>
-                </ul>
-            </div>
+    <div class="container" style="background: transparent;">
+        <link rel="stylesheet" href="/static/content/bootstrap.css">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand" style="color: #333; font-family: abosanovadcfr; font-weight: bold;">Online_PC_Constructor</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/home" style="color: #333; font-family: Roboto; font-weight: bold; text-decoration: none;">Home</a></li>
+                <li><a href="/auth" style="color: #333; font-family: Roboto; font-weight: bold; text-decoration: none;">Authorization/Registration</a></li>
+                <li><a href="/constructor" style="color: #333; font-family: Roboto; font-weight: bold; text-decoration: none;">Online Constructor</a></li>
+                <li><a href="/profile" style="color: #333; font-family: Roboto; font-weight: bold; text-decoration: none;">Profile</a></li>
+            </ul>
         </div>
     </div>
+</div>
+
 
     <div class="container body-content">
         {{!base}}

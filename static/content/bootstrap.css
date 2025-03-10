@@ -57,6 +57,17 @@ html {
       -ms-text-size-adjust: 100%;
 }
 
+@font-face {
+    font-family: 'abosanovadcfr';
+    src: url('../fonts/abosanovadcfr.ttf') format('truetype');
+}
+
+.navbar-brand {
+    color: #333;
+    font-family: 'abosanovadcfr', sans-serif; /* Используйте ваш шрифт */
+    font-weight: bold;
+}
+
 body {
   margin: 0;
 }
