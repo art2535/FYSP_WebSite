@@ -40,6 +40,7 @@
     <Folder Include="static\resources\motherboard_img\" />
     <Folder Include="static\resources\disks_img\" />
     <Folder Include="static\resources\cooler_img\" />
+    <Folder Include="static\resources\navigate_button\" />
     <Folder Include="static\resources\pc_case_img\" />
     <Folder Include="static\resources\random_access_memory_img\" />
     <Folder Include="static\resources\power_unit_img\" />
@@ -79,6 +80,7 @@
     <Content Include="static\resources\motherboard_img\motherboard3.png" />
     <Content Include="static\resources\motherboard_img\motherboard4.png" />
     <Content Include="static\resources\motherboard_img\motherboard5.png" />
+    <Content Include="static\resources\navigate_button\add_button.png" />
     <Content Include="static\resources\pc_case_img\pc_case.png" />
     <Content Include="static\resources\pc_case_img\pc_case2.png" />
     <Content Include="static\resources\pc_case_img\pc_case3.png" />
@@ -100,7 +102,6 @@
     <Content Include="static\resources\random_access_memory_img\random_access_memory4.png" />
     <Content Include="static\resources\random_access_memory_img\random_access_memory5.png" />
     <Content Include="static\resources\video_card_img\video_card.png" />
-    <Content Include="static\resources\video_card_img\video_card2.jpg" />
     <Content Include="static\resources\video_card_img\video_card2.png" />
     <Content Include="static\resources\video_card_img\video_card3.png" />
     <Content Include="static\resources\video_card_img\video_card4.png" />
