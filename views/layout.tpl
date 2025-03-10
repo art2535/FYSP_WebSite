@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #7fffd4;">
-        <div class="container" style="background-color: #ffa000;">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background: linear-gradient(to right, #F8D568, #FFA000);">
+        <div class="container" style="background: transparent;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>

@@ -1,11 +1,14 @@
 % rebase('layout.tpl', title='PC Builder', year=year)
 
-<div class="jumbotron" style="background-color: orange; color: white;">
-    <h1>Сборка ПК</h1>
-    <p class="lead">Создайте свой идеальный компьютер, выбирая из лучших комплектующих.</p>
-    <p><a href="#payment" class="btn btn-primary btn-large">Перейти к оплате</a></p>
-    <p><a href="/home" class="btn btn-primary btn large">Перейти в каталог</a></p>
+<div class="jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        <h1>Сборка ПК</h1>
+        <p class="lead">Создайте свой идеальный компьютер, выбирая из лучших комплектующих.</p>
+        <p><a href="/home" class="btn" style="background-color: #fdf5e6; color: black;">Перейти в каталог</a></p>
+    </div>
+    <img src="/static/resources/logo.png" alt="Constructor Logo" style="max-width: 200px; height: auto; margin-left: 20px;">
 </div>
+
 
 <div class="row">
     <div class="col-md-4">
@@ -71,6 +74,16 @@
             <option value="full_tower">Full Tower</option>
             <option value="mini_tower">Mini Tower</option>
         </select>
+    </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px;">
+    <div class="text-center">
+        <h2>Сумма ПК: ???</h2>
+        <p>
+    <a href="#payment" class="btn btn-large btn-lg" style="background-color: #fdf5e6; color: black; margin-top: 10px;">Перейти к оплате</a>
+</p>
+
     </div>
 </div>
 

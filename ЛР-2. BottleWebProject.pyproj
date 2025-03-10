@@ -67,6 +67,7 @@
     <Content Include="static\resources\disks_img\disk3.png" />
     <Content Include="static\resources\disks_img\disk4.png" />
     <Content Include="static\resources\disks_img\disk5.png" />
+    <Content Include="static\resources\logo.png" />
     <Content Include="static\resources\motherboard_img\motherboard.png" />
     <Content Include="static\resources\motherboard_img\motherboard2.png" />
     <Content Include="static\resources\motherboard_img\motherboard3.png" />
