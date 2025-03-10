@@ -9,7 +9,7 @@
     <button style="width:142px;margin-top:10px;background-color: #ff0033" onclick="hideModal()">Exit</button>
 </div>
 
-<div class="jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center; height: 300px">
+<div class="jumbotron" style="background-color: orange; border-radius:20px; color: white; margin-top: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center; height: 300px">
     <div class="d-flex align-items-center">
          <h1 style="margin-left:15px;">Category</h1>
          <p class="lead" style="margin-left:15px; margin-top:30px">
@@ -38,7 +38,7 @@
                         <figcaption style="text-align: center; background-color:orange; margin-top: 30px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 39 999 rub</figcaption>
                     </div>
                     <div style="text-align:right">
-                        <button style="border:none; background:none">
+                        <button onclick="showTooltip()" style="border:none; background:none">
                             <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:35px" alt="add_button1" width="40" height="40">
                         </button>
                     </div>
@@ -56,7 +56,7 @@
                         <figcaption style="text-align: center; background-color:orange; margin-top: 30px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 13 499 rub</figcaption>
                      </div>
                      <div style="text-align:right">
-                        <button style="border:none; background:none">
+                        <button onclick="showTooltip()" style="border:none; background:none">
                             <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:35px" alt="add_button1" width="40" height="40">
                         </button>
                     </div>
@@ -74,7 +74,7 @@
                         <figcaption style="text-align: center; background-color:orange; margin-top: 30px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 37 799 rub</figcaption>
                      </div>
                      <div style="text-align:right">
-                        <button style="border:none; background:none">
+                        <button onclick="showTooltip()" style="border:none; background:none">
                             <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:35px" alt="add_button1" width="40" height="40">
                         </button>
                      </div>
@@ -92,7 +92,7 @@
                         <figcaption style="text-align: center; background-color:orange; margin-top: 30px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 17 899 rub</figcaption>
                      </div>
                      <div style="text-align:right">
-                        <button style="border:none; background:none">
+                        <button onclick="showTooltip()" style="border:none; background:none">
                             <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:35px" alt="add_button1" width="40" height="40">
                         </button>
                     </div>
@@ -110,7 +110,9 @@
                         <figcaption style="text-align: center; background-color:orange; margin-top: 30px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 9 999 rub</figcaption>
                      </div>
                      <div style="text-align:right">
-                        <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-100px; margin-top:35px" alt="add_button1" width="40" height="40">
+                        <button onclick="showTooltip()" style="border:none; background:none">
+                            <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:35px" alt="add_button1" width="40" height="40">
+                        </button>
                     </div>
                 </div>       
             </div>
@@ -136,7 +138,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 69 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -154,7 +156,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 37 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -172,7 +174,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 184 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -190,7 +192,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 10px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 150 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:13px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -208,7 +210,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 19 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -236,7 +238,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 13 499 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -254,7 +256,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 10 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -272,7 +274,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 11 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -290,7 +292,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 21 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -308,7 +310,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 18 599 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -338,7 +340,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 70px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 10 199 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:75px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -356,7 +358,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 70px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 4 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:75px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -374,7 +376,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 13 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -392,7 +394,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 17 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -410,7 +412,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 5 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -438,7 +440,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 7 899 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -456,7 +458,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 70px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 10 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:75px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -474,7 +476,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 40px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 6 299 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:45px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -492,7 +494,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 20px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 9 399 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:25px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -510,7 +512,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 50px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 5 799 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:55px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -538,7 +540,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 20px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 12 299 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:25px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -556,7 +558,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 12 499 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -574,7 +576,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 7 899 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -592,7 +594,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 4 299 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -610,7 +612,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 11 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -638,7 +640,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 2 899 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -656,7 +658,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 4 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -674,7 +676,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 1 499 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -692,7 +694,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 20px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 2 299 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:25px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -710,7 +712,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 2 799 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -739,7 +741,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 7 599 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -757,7 +759,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 85px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 7 999 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:90px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -775,7 +777,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 6 399 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -793,7 +795,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 85px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 5 699 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:90px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -811,7 +813,7 @@
                             <figcaption style="text-align: center; background-color:orange; margin-top: 52px; width: 200px; height:51px; border: 3px solid orange; border-radius:20px; font-size:21px">Cost: 4 899 rub</figcaption>
                          </div>
                          <div style="text-align:right">
-                            <button style="border:none; background:none">
+                            <button onclick="showTooltip()" style="border:none; background:none">
                                 <img src="/static/resources/navigate_button/add_button.png" style="margin-right:-150px; margin-top:57px" alt="add_button1" width="40" height="40">
                             </button>
                          </div>
@@ -863,7 +865,41 @@
                 margin-right: 0;
             }
         }
+        #tooltip {
+            transition: opacity 1s ease, transform 1s ease;
+            transform: translateY(-10px); 
+        }
+
+        #tooltip[style*="opacity:0"] {
+            transform: translateY(-50px);
+        }
 </style>
+
+
+<div style="display:none; position:fixed; top:55px; left:50%; transform:translateX(-50%); 
+            background:#ffff99; border:1px solid black; padding:10px; border-radius:5px; 
+            font-size:18px; text-align:center;" id="tooltip">
+            The product has been successfully added to the build!
+</div>
+
+<script>
+    function showTooltip() {
+         var tooltip = document.getElementById('tooltip');
+         tooltip.style.display = 'block';
+         tooltip.style.opacity = '1'; 
+ 
+
+         setTimeout(function() {
+         tooltip.style.transition = 'opacity 1s ease';
+         tooltip.style.opacity = '0'; 
+ 
+ 
+         setTimeout(function() {
+         tooltip.style.display = 'none';
+         }, 1000);
+         }, 3000);
+    }
+</script>
 
 
 <div class="row" style="margin-top:250px">
