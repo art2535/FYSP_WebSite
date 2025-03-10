@@ -62,6 +62,7 @@
     <Content Include="static\fonts\Share-Tech-CYR-Italic-Bold.otf" />
     <Content Include="static\fonts\Share-Tech-CYR-Italic.otf" />
     <Content Include="static\fonts\Share-Tech-CYR.otf" />
+    <Content Include="static\resources\buy_logo.png" />
     <Content Include="static\resources\cooler_img\cooler.png" />
     <Content Include="static\resources\cooler_img\cooler2.png" />
     <Content Include="static\resources\cooler_img\cooler3.png" />
