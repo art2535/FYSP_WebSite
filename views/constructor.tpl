@@ -77,6 +77,26 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-4">
+        <h2>Блок питания</h2>
+        <p>Выберите себе подходящий блок питания, который обеспечит достаточную подачу питания на его компоненты.</p>
+        <select class="form-control" id="ram-select">
+            <option value="">Выберите блок питания</option>
+            <option value="KSAS">KSAS BOOM</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <h2>Кулер</h2>
+        <p>Выберите кулер, чтобы не допустить перегрева процессора и воздуха в компьютере.</p>
+        <select class="form-control" id="storage-select">
+            <option value="">Выберите кулер</option>
+            <option value="aerocool">AeroCool MegaFreeze</option>
+
+        </select>
+    </div>
+</div>
+
 <div class="d-flex align-items-center justify-content-center jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px;">
     <div class="text-center">
         <h2>Сумма ПК: ???</h2>
