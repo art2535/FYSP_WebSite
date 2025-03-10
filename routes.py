@@ -77,4 +77,13 @@ def constructor():
         title='PC Builder',
         year=datetime.now().year
     )
+
+@route('/profile')
+@view('profile')
+def profile():
+    return dict(
+        title='Profile settings',
+        message='You can change your profile here.',
+        year=datetime.now().year,
+    )
     
