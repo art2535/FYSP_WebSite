@@ -1,19 +1,23 @@
 % rebase('layout.tpl', title=title, year=year)
 
-<div class="jumbotron content-center w-100">
+<div class="jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-radius: 20px;">
+    <div style="margin-left: 20px;">
+        <div class="text-center" style="width: 250%">
+            <h1>{{ title }}</h1>
+        </div>
+        <h3 class="text-center mb-4" style="width: 250%">{{ message }}</h3>
+    </div>
+</div>
+
+<div class="content-center w-100">
     <div class="row content-center">
         <div class="col-md-12">
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white text-center">
-                    <h2>{{ title }}</h2>
-                </div>
                 <div class="card-body">
-                    <h3 class="text-center mb-4">{{ message }}</h3>
-                    
-                    <div class="row" style="margin: 50px">
+                    <div class="row">
                         <!-- Registration Form -->
-                        <div class="col-md-6">
-                            <h4 class="mb-3" style="margin: 0 0 0 120px;">Register</h4>
+                        <div class="col-md-6" style="margin-left: 150px">
+                            <h4 class="mb-3" style="margin: 0 0 0 120px">Register</h4>
                             <form method="POST" action="/register">
                                 <div class="mb-3">
                                     <label for="reg_firstname" class="form-label">First Name</label>
@@ -46,14 +50,14 @@
                                 </div>
                                 <p></p>
                                 <div class="d-flex justify-content-center mt-3">
-                                    <button type="submit" class="btn btn-primary" style="width: 50%; margin: 30px; background-color: #FFA000;">Register</button>
+                                    <button type="submit" class="btn btn-primary" style="width: 50%; background-color: #FFA000;">Register</button>
                                 </div>
                             </form>
                         </div>
 
                         <!-- Login Form -->
-                        <div class="col-md-6">
-                            <h4 class="mb-3" style="margin: 0 0 0 120px;">Login</h4>
+                        <div class="col-md-6" style="margin-right: -150px">
+                            <h4 class="mb-3" style="margin: 0 0 0 120px">Login</h4>
                             <form method="POST" action="/login">
                                 <div class="mb-3">
                                     <label for="login_username" class="form-label">Username</label>
@@ -66,7 +70,7 @@
                                 </div>
                                 <p></p>
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success" style="width: 50%; margin: 30px; background-color: #FFA000;">Login</button>
+                                    <button type="submit" class="btn btn-success" style="width: 50%; background-color: #FFA000;">Login</button>
                                 </div>
                             </form>
                         </div>
