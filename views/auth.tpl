@@ -36,16 +36,6 @@
                                 </div>
                                 <p></p>
                                 <div class="mb-3">
-                                    <label for="reg_gender" class="form-label">Gender</label>
-                                    <select class="form-control" id="reg_gender" name="gender" required>
-                                        <option value="" disabled selected>Select gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <p></p>
-                                <div class="mb-3">
                                     <label for="reg_username" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="reg_username" name="username" placeholder="Enter username" required>
                                 </div>
