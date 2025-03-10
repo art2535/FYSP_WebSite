@@ -53,10 +53,15 @@
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
     <Content Include="static\content\site.css" />
+    <Content Include="static\fonts\abosanovadcfr.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\fonts\Share-Tech-CYR-Bold.otf" />
+    <Content Include="static\fonts\Share-Tech-CYR-Italic-Bold.otf" />
+    <Content Include="static\fonts\Share-Tech-CYR-Italic.otf" />
+    <Content Include="static\fonts\Share-Tech-CYR.otf" />
     <Content Include="static\resources\cooler_img\cooler.png" />
     <Content Include="static\resources\cooler_img\cooler2.png" />
     <Content Include="static\resources\cooler_img\cooler3.png" />
