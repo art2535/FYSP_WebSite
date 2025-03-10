@@ -75,7 +75,7 @@
     </div>
     <div class="col-md-4">
         <h2>Кулер</h2>
-        <p>Выберите кулер, чтобы не допустить перегрева процессора и воздуха в компьютере.</p>
+        <p>Выберите кулер, чтобы не допустить перегрева процессора и других комплектующих в компьютере.</p>
         <select class="form-control" id="storage-select">
             <option value="">Выберите кулер</option>
             <option value="aerocool">AeroCool MegaFreeze</option>
