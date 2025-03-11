@@ -1,11 +1,9 @@
 % rebase('layout.tpl', title='User Profile', year=year)
 
-<div class="jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-radius: 20px;">
-    <div style="margin-left: 20px;">
-        <div class="text-center" style="width: 250%">
-            <h1>{{ title }}</h1>
-        </div>
-        <h3 class="text-center mb-4" style="width: 250%">{{ message }}</h3>
+<div class="jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 20px; text-align: center; width: 100%;">
+    <div>
+        <h1>{{ title }}</h1>
+        <h3 class="mb-4">{{ message }}</h3>
     </div>
 </div>
 
