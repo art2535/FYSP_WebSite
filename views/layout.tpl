@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 24px;">Online PC Constructor</a>
+                <a class="navbar-brand" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 24px;">Online PC Constructor</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
