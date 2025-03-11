@@ -330,7 +330,7 @@
 <div class="jumbotron" style="height: 310px; background-color: white;">
     <div class="scroll-container" style="margin-top: -50px">
         <div class="row_elements">
-                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 400px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
+                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 400px; min-width:350px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
                     <button style="border:none; background:none; margin-top: 10px">
                         <img src="/static/resources/power_unit_img/power_unit.png" alt="power_unit1" width="200" height="200">
                     </button>
@@ -348,7 +348,7 @@
                 </div>
 
 
-                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 400px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
+                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 400px; min-width:350px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
                     <button style="border:none; background:none; margin-top: 10px">
                         <img src="/static/resources/power_unit_img/power_unit2.png" alt="power_unit2" width="200" height="200">
                     </button>
@@ -502,7 +502,7 @@
                 </div>
 
 
-                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 335px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
+                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 335px; min-width:350px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
                     <button style="border:none; background:none; margin-top: 10px">
                         <img src="/static/resources/disks_img/disk5.png" alt="disk5" width="100" height="150">
                     </button>
@@ -785,7 +785,7 @@
                 </div>
 
 
-                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 515px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
+                <div class="col-md-6 col-lg-4" style="text-align: center; flex: 0 0 auto; border: 2px solid #cccccc; border-radius:20px; height: 515px; min-width:350px; max-width:350px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)">
                     <button style="border:none; background:none; margin-top: 10px">
                         <img src="/static/resources/pc_case_img/pc_case4.png" alt="pc_case4" width="200" height="300">
                      </button>
