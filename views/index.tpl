@@ -823,58 +823,6 @@
     </div>
 </div>
 
-<style>
-        .scroll-container {
-            display: flex;
-            overflow-x: auto;
-            padding: 10px;
-            margin: 0 -15px; 
-        }
-
-        .row_elements {
-            display: flex;
-            flex-wrap: nowrap;
-        }
-
-        .col-md-6.col-lg-4 {
-            padding: 0 15px;
-            margin-left: 10px;
-        }
-
-
-        .scroll-container::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .scroll-container::-webkit-scrollbar-thumb {
-            background: rgba(0,0,0,0.2);
-            border-radius: 4px;
-        }
-
-        .scroll-container::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.05);
-        }
-
-        @media (max-width: 768px) {
-            .scroll-container {
-                padding: 10px 0;
-            }
-    
-            .col-md-6.col-lg-4 {
-                flex: 0 0 100%;
-                margin-right: 0;
-            }
-        }
-        #tooltip {
-            transition: opacity 1s ease, transform 1s ease;
-            transform: translateY(-10px); 
-        }
-
-        #tooltip[style*="opacity:0"] {
-            transform: translateY(-50px);
-        }
-</style>
-
 
 <div style="display:none; position:fixed; top:55px; left:50%; transform:translateX(-50%); 
             background:#ffff99; border:1px solid black; padding:10px; border-radius:5px; 
