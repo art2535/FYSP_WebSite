@@ -27,6 +27,7 @@
                     <li><a href="/auth" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Authorization/Registration</a></li>
                     <li><a href="/constructor" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Online Constructor</a></li>
                     <li><a href="/profile" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Profile</a></li>
+                    <li><a href="/partners" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Partner companies</a></li>
                 </ul>
             </div>
         </div>
