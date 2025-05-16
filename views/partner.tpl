@@ -1,72 +1,71 @@
 % rebase('layout.tpl', title=title, year=year)
+<link rel="stylesheet" href="/static/content/page_styles/styles_partners.css">
 
-<h1 style="margin-bottom: 20px;">Partner companies</h1>
+<h1>Partner companies</h1>
 
-<div style="display: flex; gap: 50px; align-items: flex-start;">
-    <form action="/add" method="post" enctype="multipart/form-data" style="max-width: 600px;">
-
-        <div style="background-color: #f5f5f5; border-radius: 10px; padding: 15px; margin-bottom: 15px;">
-            <label for="name" style="display: block; color: #777; font-size: 14px; margin-bottom: 5px;">Name</label>
-            <input type="text" id="name" name="name" value="{{form_data.get('name', '')}}" placeholder="Enter company name"
-                   style="width: 100%; border: none; background: transparent; font-size: 16px;" required>
+<div class="partner-form-container">
+    <form action="/add" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{form_data.get('name', '')}}" placeholder="Enter company name" required>
             % if errors.get('name'):
                 <div class="error">{{errors['name']}}</div>
             % end
         </div>
 
-        <div style="background-color: #f5f5f5; border-radius: 10px; padding: 15px; margin-bottom: 15px;">
-            <label for="description" style="display: block; color: #777; font-size: 14px; margin-bottom: 5px;">Description</label>
-            <textarea id="description" name="description" placeholder="Enter description"
-                      style="width: 100%; border: none; background: transparent; font-size: 16px;" required>{{form_data.get('description', '')}}</textarea>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Enter description" required>{{form_data.get('description', '')}}</textarea>
             % if errors.get('description'):
                 <div class="error">{{errors['description']}}</div>
             % end
         </div>
 
-        <div style="background-color: #f5f5f5; border-radius: 10px; padding: 15px; margin-bottom: 15px;">
-            <label for="phone" style="display: block; color: #777; font-size: 14px; margin-bottom: 5px;">Phone</label>
-            <input type="text" id="phone" name="phone" placeholder="+7(XXX)XXX-XX-XX" value="{{form_data.get('phone', '')}}"
-                   style="width: 100%; border: none; background: transparent; font-size: 16px;" required>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="+7(XXX)XXX-XX-XX" value="{{form_data.get('phone', '')}}" required>
             % if errors.get('phone'):
                 <div class="error">{{errors['phone']}}</div>
             % end
         </div>
 
-        <div style="background-color: #f5f5f5; border-radius: 10px; padding: 15px; margin-bottom: 15px;">
-            <label for="date" style="display: block; color: #777; font-size: 14px; margin-bottom: 5px;">Date added</label>
-            <input type="date" id="date" name="date" value="{{form_data.get('date', '')}}"
-                   style="width: 100%; border: none; background: transparent; font-size: 16px;" required>
+        <div class="form-group">
+            <label for="date">Date added</label>
+            <input type="date" id="date" name="date" value="{{form_data.get('date', '')}}" required>
             % if errors.get('date'):
                 <div class="error">{{errors['date']}}</div>
             % end
         </div>
 
-        <div style="background-color: #f5f5f5; border-radius: 10px; padding: 15px; margin-bottom: 20px;">
-            <label for="logo" style="display: block; color: #777; font-size: 14px; margin-bottom: 5px;">Logo</label>
-            <input type="file" id="logo" name="logo" accept="image/*"
-                   style="width: 100%; border: none; background: transparent; font-size: 16px;">
+        <div class="form-group">
+            <label for="logo">Logo</label>
+            <input type="file" id="logo" name="logo" accept="image/*">
             % if errors.get('logo'):
                 <div class="error">{{errors['logo']}}</div>
             % end
         </div>
 
-        <button type="submit" class="btn-submit" style="background-color: #FF8C00; border: none; cursor: pointer; color: white; font-size: 14px; font-weight: 500; padding: 8px 15px; border-radius: 5px;">Add</button>
+        <button type="submit" class="btn-submit">Add</button>
     </form>
 
-    <img src="/static/resources/logo.png" style="max-width: 300px;" alt="Logotype">
+    <img src="/static/resources/logo.png" alt="Logotype" class="partner-logo">
 </div>
 
 <hr>
 
-<h2 style="margin-top: 40px;">Our partners</h2>
-<ul style="list-style: none; padding: 0;">
+<h2>Our partners</h2>
+<ul class="partner-list">
     % for c in companies:
-        <li style="margin-bottom: 25px; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
-            <strong>{{c['name']}}</strong> ({{c['date']}})<br>
-            {{c['description']}}<br>
-            Contact: {{c['phone']}}<br>
+        <li class="partner27">
+            <div class="partner-info">
+                <strong>{{c['name']}}</strong> ({{c['date']}})<br>
+                {{c['description']}}<br>
+                Contact: {{c['phone']}}<br>
+            </div>
             % if c.get('logo'):
-                <img src="/logos/{{c['logo']}}" alt="Logo" style="max-height: 100px; margin-top: 5px;">
+                <div class="partner-logo-wrapper">
+                    <img src="static/resources/logos/{{c['logo']}}" alt="Logo" class="company-logo">
+                </div>
             % end
         </li>
     % end

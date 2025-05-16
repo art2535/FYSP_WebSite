@@ -1,14 +1,16 @@
 % rebase('layout.tpl', title='PC Builder', year=year)
 
-<div class="jumbotron" style="background-color: orange; color: white; margin-top: 20px; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-radius: 20px;">
-    <div style="margin-left: 20px;">
+<link rel="stylesheet" href="/static/content/page_styles/styles_constructor.css">
+
+<div class="jumbotron constructor-header">
+    <div class="constructor-header-text">
         <h1>PC Assembly</h1>
         <p class="lead">Create your ideal computer by choosing from the best components!</p>
-        <button onclick="showAdvice()" style="background: linear-gradient(180deg, #1fc42f, #28a745); color: white; border: none; border-radius: 15px; padding: 10px 15px; cursor: pointer;">
+        <button onclick="showAdvice()" class="btn-advice">
             Get Advice
         </button>
     </div>
-    <img src="/static/resources/logo.png" alt="Constructor Logo" style="max-width: 200px; height: auto; margin-left: 20px;">
+    <img src="/static/resources/logo.png" alt="Constructor Logo" class="constructor-logo">
 </div>
 
 <script>
@@ -16,7 +18,6 @@
         alert("Choose components that are compatible with each other and fit your needs for performance and budget!");
     }
 </script>
-
 
 <div class="row">
     <div class="col-md-4">
@@ -90,20 +91,20 @@
         </select>
     </div>
 </div>
-<div class="d-flex align-items-center justify-content-center jumbotron" style="background-color: orange; color: #333; margin-top: 40px; padding: 20px; border-radius: 20px;">
+
+<div class="jumbotron total-cost-block">
     <div class="text-center">
-        <div style="background-color: #ffcc80; border-radius: 10px; padding: 20px; display: inline-block;"> 
-            <h3 style="margin: 0;" id="total-cost">Total PC cost: 0.00 rub</h3>
+        <div class="total-cost-box"> 
+            <h3 id="total-cost">Total PC cost: 0.00 rub</h3>
         </div>
         <p>
-            <a href="#payment" class="btn btn-large btn-lg" style="background: linear-gradient(180deg, #1fc42f, #28a745); border-radius: 20px; color: white; margin-top: 20px; align-items: center; padding: 15px 30px; font-size: 24px; text-decoration: none; transition: background 0.3s ease;">
+            <a href="#payment" class="btn-payment">
                 Proceed to Payment
-                <img src="/static/resources/buy_logo.png" alt="Constructor Logo" style="max-width: 35px; height: auto; margin-left: 10px;">
+                <img src="/static/resources/buy_logo.png" alt="Constructor Logo" class="buy-logo">
             </a>
         </p>
     </div>
 </div>
-
 
 <script>
 function selectComponent() {
@@ -118,17 +119,17 @@ function selectComponent() {
         'cooler-select'
     ];
     
-    let totalCostKopecks = 0; // Total cost in kopecks
+    let totalCostKopecks = 0;
 
     components.forEach(component => {
         const selectElement = document.getElementById(component);
         const selectedOption = selectElement.options[selectElement.selectedIndex];
         const price = parseInt(selectedOption.getAttribute('data-price')) || 0;
-        totalCostKopecks += price; // Add price in rubles
+        totalCostKopecks += price;
     });
 
-    const totalCostRub = Math.floor(totalCostKopecks); // Total cost in rubles
-    const totalCostKopecksDisplay = (totalCostKopecks % 1 * 100).toFixed(0); // Remaining kopecks
-    document.getElementById('total-cost').innerText = `Total PC cost: ${totalCostRub}.${totalCostKopecksDisplay.padStart(2, '0')} rub`; // Format output
+    const totalCostRub = Math.floor(totalCostKopecks);
+    const totalCostKopecksDisplay = (totalCostKopecks % 1 * 100).toFixed(0);
+    document.getElementById('total-cost').innerText = `Total PC cost: ${totalCostRub}.${totalCostKopecksDisplay.padStart(2, '0')} rub`;
 }
 </script>
