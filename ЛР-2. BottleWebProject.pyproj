@@ -31,10 +31,21 @@
   <ItemGroup>
     <Compile Include="app.py" />
     <Compile Include="routes.py" />
+    <Compile Include="services\file_service.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="services\user_service.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="services\validation.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="services\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
+    <Folder Include="static\content\page_styles\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\resources\" />
     <Folder Include="static\resources\motherboard_img\" />
@@ -53,7 +64,12 @@
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
+    <Content Include="static\content\page_styles\styles_auth.css" />
+    <Content Include="static\content\page_styles\styles_constructor.css" />
+    <Content Include="static\content\page_styles\styles_layout.css" />
+    <Content Include="static\content\page_styles\styles_partners.css" />
     <Content Include="static\content\site.css" />
+    <Content Include="static\content\page_styles\styles_profile.css" />
     <Content Include="static\fonts\abosanovadcfr.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
