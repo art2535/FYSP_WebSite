@@ -1,0 +1,22 @@
+.navbar navbar-inverse navbar-fixed-top {
+    background: linear-gradient(to right, #F8D568, #FFA000);
+}
+
+.custom-container {
+    background: transparent;
+}
+
+.custom-brand {
+    color: #333;
+    font-family: Share-Tech-CYR-Bold;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.custom-nav-link {
+    color: #333 !important;
+    font-family: Share-Tech-CYR-Bold;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}

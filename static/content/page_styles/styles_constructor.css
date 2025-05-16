@@ -1,0 +1,67 @@
+.constructor-header {
+    background-color: orange;
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.constructor-header-text {
+    margin-left: 20px;
+}
+
+.constructor-logo {
+    max-width: 200px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.btn-advice {
+    background: linear-gradient(180deg, #1fc42f, #28a745);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.total-cost-block {
+    background-color: orange;
+    color: #333;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-cost-box {
+    background-color: #ffe0b2; /* светло-персиковый */
+    border-radius: 12px;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.btn-payment {
+    background: linear-gradient(180deg, #1fc42f, #28a745);
+    border-radius: 20px;
+    color: white;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.buy-logo {
+    max-width: 35px;
+    height: auto;
+    margin-left: 10px;
+}
