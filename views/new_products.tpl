@@ -10,7 +10,23 @@
     <img src="/static/resources/logo.png" alt="Логотип новинок" class="constructor-logo">
 </div>
 
-<div class="container mt-4">
+<div class="container">
+    <div class="card-container">
+        % for item in new_products:
+            <div class="card news-item">
+                <div class="card-header">
+                    <h3>{{item['author']}}</h3>
+                    <small>{{item['date']}}</small>
+                </div>
+                <div class="card-body">
+                    <p>{{item['text']}}</p>
+                </div>
+            </div>
+        % end
+    </div>
+
+    <hr>
+
     <form method="post" class="news-form">
         <h2>Добавить новинку</h2>
         % if error:
@@ -30,17 +46,4 @@
         </div>
         <button type="submit" class="btn-submit">Разместить</button>
     </form>
-
-    <hr>
-
-    <div class="news-list">
-        <h2>Список новинок</h2>
-        % for item in new_products:
-            <div class="news-item">
-                <h3>{{item['author']}}</h3>
-                <small>{{item['date']}}</small>
-                <p>{{item['text']}}</p>
-            </div>
-        % end
-    </div>
 </div>

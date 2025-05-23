@@ -19,40 +19,114 @@
     margin-left: 20px;
 }
 
+/* Контейнеры */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Карточки */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card.news-item {
+    display: flex;
+    flex-direction: column;
+    border-left: 8px solid orange;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+
+    .card.news-item:hover {
+        transform: translateY(-4px);
+    }
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-header small {
+    color: #555;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.card-body p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+/* Форма */
 .news-form {
     background: #fff3e0;
-    padding: 20px;
+    padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
     margin-bottom: 30px;
 }
 
+    .news-form h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+    .form-group label {
+        font-weight: 600;
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: inherit;
 }
 
 .form-error {
     background: #f8d7da;
     color: #721c24;
-    padding: 10px;
+    padding: 16px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
 }
 
+/* Кнопка отправки */
 .btn-submit {
     background: linear-gradient(180deg, #1fc42f, #28a745);
     color: white;
     border: none;
-    padding: 10px 25px;
+    padding: 14px 32px;
     border-radius: 15px;
-    font-size: 16px;
+    font-size: 1.2rem;
+    font-weight: 500;
     cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: inherit;
 }
 
-.news-list .news-item {
-    background: #fff;
-    border-left: 5px solid orange;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 10px;
-}
+    .btn-submit:hover {
+        background: linear-gradient(180deg, #1ab327, #218838);
+    }
