@@ -34,6 +34,7 @@
     <Compile Include="services\file_service.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="services\new_products_logic.py" />
     <Compile Include="services\user_service.py">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +65,7 @@
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
+    <Content Include="static\content\page_styles\styles_new_products.css" />
     <Content Include="static\content\page_styles\styles_auth.css" />
     <Content Include="static\content\page_styles\styles_constructor.css" />
     <Content Include="static\content\page_styles\styles_layout.css" />
@@ -79,6 +81,7 @@
     <Content Include="static\fonts\Share-Tech-CYR-Italic-Bold.otf" />
     <Content Include="static\fonts\Share-Tech-CYR-Italic.otf" />
     <Content Include="static\fonts\Share-Tech-CYR.otf" />
+    <Content Include="static\resources\news.json" />
     <Content Include="static\resources\buy_logo.png" />
     <Content Include="static\resources\cooler_img\cooler.png" />
     <Content Include="static\resources\cooler_img\cooler2.png" />
@@ -141,6 +144,9 @@
     <Content Include="views\constructor.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
+    <Content Include="views\new_products.tpl">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\partner.tpl" />
     <Content Include="views\profile.tpl" />
   </ItemGroup>
