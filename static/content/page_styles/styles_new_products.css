@@ -1,0 +1,58 @@
+.constructor-header {
+    background-color: orange;
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.constructor-header-text {
+    margin-left: 20px;
+}
+
+.constructor-logo {
+    max-width: 200px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.news-form {
+    background: #fff3e0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-submit {
+    background: linear-gradient(180deg, #1fc42f, #28a745);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.news-list .news-item {
+    background: #fff;
+    border-left: 5px solid orange;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}

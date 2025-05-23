@@ -5,6 +5,7 @@ import os
 from services.user_service import register_user, authenticate_user
 from services.validation import validate_form
 from services.file_service import save_json, load_json
+from services.new_products_logic import load_news, save_news,validate_news_form
 
 DATA_FILE = 'static/resources/partners.json'
 USERS_FILE = 'static/resources/users.json'
@@ -125,6 +126,40 @@ def add_partner():
     save_json(DATA_FILE, companies)
 
     redirect('/partners')
+    
+@route('/new_products', method=['GET', 'POST'])
+def new_products():
+    author = request.forms.get('author', '').strip()
+    text = request.forms.get('text', '').strip()
+    date = request.forms.get('date', '').strip()
+
+    if request.method == 'POST':
+        errors = validate_news_form(author, text, date)
+
+        if not errors:
+            news_list = load_news()
+            news_list.insert(0, {'author': author, 'text': text, 'date': date})
+            save_news(news_list)
+            return redirect('/new_products')
+        else:
+            return template('new_products.tpl',
+                            new_products=load_news(),
+                            error="Пожалуйста, исправьте ошибки в форме.",
+                            errors=errors,
+                            author=author,
+                            text=text,
+                            date=date,
+                            year=datetime.now().year)
+
+    return template('new_products.tpl',
+                    new_products=load_news(),
+                    error=None,
+                    errors={},
+                    author='',
+                    text='',
+                    date='',
+                    year=datetime.now().year)
+
 
 @route('/logos/<filename>')
 def serve_logo(filename):
