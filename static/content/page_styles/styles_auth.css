@@ -56,8 +56,10 @@
         padding: 0;
     }
 
-.d-flex.justify-content-center.mt-3 {
-    margin-top: 1rem;
+.d-flex.justify-content-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Consistent with mt-3 */
 }
 
 .btn-submit {
@@ -71,45 +73,9 @@
     border-radius: 5px;
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-.partner-form-container {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-}
-
-    .partner-form-container form {
-        max-width: 600px;
-    }
-
-    .partner-form-container .form-group {
-        margin-bottom: 15px;
-    }
-
-.partner-logo {
-    max-width: 300px;
-}
-
-h2 {
-    margin-top: 40px;
-}
-
-.partner-list {
-    list-style: none;
-    padding: 0;
-}
-
-.partner27 {
-    margin-bottom: 25px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-.company-logo {
-    max-height: 100px;
+.error-message {
+    color: red;
+    font-size: 0.9em;
     margin-top: 5px;
+    margin-bottom: 10px;
 }
