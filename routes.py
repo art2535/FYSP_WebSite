@@ -86,7 +86,7 @@ def show_partners():
 def add_partner():
     result = add_partners(request.forms, request.files.get('logo'), 'static/resources/partners.json', 'static/resources/logos')
     if result['errors']:
-        return template('auth',
+        return template('partner',
                        title="Partner Companies",
                        year=datetime.now().year,
                        companies=result['companies'],

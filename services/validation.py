@@ -11,17 +11,25 @@ def validate_partner_form(form_data):
     """
     errors = {}
 
-    # Validate name: non-empty, letters, numbers, spaces, and basic punctuation
+    # Validate name: non-empty, 3-100 characters, letters, numbers, spaces, and basic punctuation
     name = form_data.get('name', '').strip()
     if not name:
         errors['name'] = 'Company name is required.'
+    elif len(name) < 3:
+        errors['name'] = 'Company name must be at least 3 characters.'
+    elif len(name) > 100:
+        errors['name'] = 'Company name cannot exceed 100 characters.'
     elif not re.match(r'^[A-Za-z0-9\s.,&()-]+$', name):
         errors['name'] = 'Name can only contain letters, numbers, spaces, and basic punctuation.'
 
-    # Validate description: non-empty
+    # Validate description: non-empty, 10-500 characters
     description = form_data.get('description', '').strip()
     if not description:
         errors['description'] = 'Description is required.'
+    elif len(description) < 10:
+        errors['description'] = 'Description must be at least 10 characters.'
+    elif len(description) > 500:
+        errors['description'] = 'Description cannot exceed 500 characters.'
 
     # Validate phone: matches +7(XXX)XXX-XX-XX format
     phone = form_data.get('phone', '').strip()
@@ -86,15 +94,19 @@ def validate_registration_form(form_data):
     if email and not re.match(email_pattern, email):
         errors['email'] = 'Invalid email format.'
 
-    # Validate phone: matches +7(XXX)XXX-XX-XX format if provided
+    # Validate phone: matches +7(XXX)XXX-XX-XX format, required
     phone = form_data.get('phone', '').strip()
     phone_pattern = r'^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$'
-    if phone and not re.match(phone_pattern, phone):
+    if not phone:
+        errors['phone'] = 'Phone number is required.'
+    elif not re.match(phone_pattern, phone):
         errors['phone'] = 'Phone must be in format +7(XXX)XXX-XX-XX.'
 
-    # Validate birthdate: valid date, not in future if provided
+    # Validate birthdate: valid date, not in future, required
     birthdate = form_data.get('birthdate', '').strip()
-    if birthdate:
+    if not birthdate:
+        errors['birthdate'] = 'Invalid birthdate format.'
+    else:
         try:
             input_date = datetime.strptime(birthdate, '%Y-%m-%d').date()
             current_date = datetime.now().date()
