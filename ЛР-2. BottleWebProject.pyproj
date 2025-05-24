@@ -35,6 +35,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="services\new_products_logic.py" />
+    <Compile Include="services\partner_service.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="services\user_service.py">
       <SubType>Code</SubType>
     </Compile>

@@ -130,3 +130,10 @@ h2 {
     margin-top: 5px;
     display: block;
 }
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
