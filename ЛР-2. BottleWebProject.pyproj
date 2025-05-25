@@ -19,6 +19,9 @@
     <Name>ЛР-2. BottleWebProject</Name>
     <RootNamespace>ЛР-2. BottleWebProject</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,14 +38,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="services\new_products_logic.py" />
+    <Compile Include="services\partner_service.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="services\user_service.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="services\validation.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tests\test_register_validation_form.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="tests\" />
     <Folder Include="services\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
