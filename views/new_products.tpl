@@ -11,7 +11,11 @@
 
 <div class="container">
     <div class="card-container">
+        % from datetime import datetime
+        % now = datetime.now().date()
         % for index, item in enumerate(new_products):
+            % item_date = datetime.strptime(item['date'], '%Y-%m-%d').date()
+            % is_future = item_date > now
             <div class="card news-item">
                 <div class="card-header">
                     <h3>{{item['author']}}</h3>
@@ -23,7 +27,9 @@
                         <input type="hidden" name="delete_index" value="{{index}}">
                         <button type="submit" class="btn-delete">Delete</button>
                     </form>
-                    <button onclick="orderProduct('{{item['author']}}')" class="btn-order">Order</button>
+                    <button onclick="orderProduct('{{item['author']}}')" class="btn-order">
+                        {{'Pre-order' if is_future else 'Order'}}
+                    </button>
                 </div>
             </div>
         % end
