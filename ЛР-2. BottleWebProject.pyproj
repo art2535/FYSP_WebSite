@@ -47,6 +47,9 @@
     <Compile Include="services\validation.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tests\test_new_products_validation.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tests\test_register_validation_form.py">
       <SubType>Code</SubType>
     </Compile>
