@@ -1,5 +1,4 @@
 % rebase('layout.tpl', title='Актуальные новинки', year=year)
-
 <link rel="stylesheet" href="/static/content/page_styles/styles_new_products.css">
 
 <div class="jumbotron constructor-header">
@@ -12,7 +11,7 @@
 
 <div class="container">
     <div class="card-container">
-        % for item in new_products:
+        % for index, item in enumerate(new_products):
             <div class="card news-item">
                 <div class="card-header">
                     <h3>{{item['author']}}</h3>
@@ -20,6 +19,11 @@
                 </div>
                 <div class="card-body">
                     <p>{{item['text']}}</p>
+                    <form method="post" class="delete-form" style="display:inline;">
+                      <input type="hidden" name="delete_index" value="{{index}}">
+                      <button type="submit" class="btn-delete">Удалить</button>
+                    </form>
+                    <button onclick="orderProduct('{{item['author']}}')" class="btn-order">Заказать</button>
                 </div>
             </div>
         % end
@@ -33,7 +37,7 @@
             <div class="form-error">{{!error}}</div>
         % end
         <div class="form-group">
-            <label for="author">Автор / Название *</label>
+            <label for="author">Бренд / Название новинки *</label>
             <input type="text" name="author" id="author" class="form-control" value="{{author or ''}}" required>
         </div>
         <div class="form-group">
@@ -47,3 +51,9 @@
         <button type="submit" class="btn-submit">Разместить</button>
     </form>
 </div>
+
+<script>
+function orderProduct(productName) {
+    alert("Новинка '" + productName + "' добавлена в корзину!");
+}
+</script>

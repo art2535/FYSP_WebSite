@@ -1,9 +1,11 @@
 from bottle import route, view, request, redirect, response, template, static_file
 from datetime import datetime
+import traceback
+from bottle import HTTPResponse  # Добавим этот импорт
 
 from services.partner_service import get_partners, add_partners
 from services.user_service import register_user, authenticate_user, logout_user
-from services.new_products_logic import load_news, save_news, validate_news_form
+from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news
 
 @route('/')
 @route('/home')
@@ -94,29 +96,58 @@ def add_partner():
                        errors=result['errors'])
     redirect('/partners')
 
+import traceback
+
 @route('/new_products', method=['GET', 'POST'])
 def new_products():
-    author = request.forms.get('author', '').strip()
-    text = request.forms.get('text', '').strip()
-    date = request.forms.get('date', '').strip()
-
     if request.method == 'POST':
-        errors = validate_news_form(author, text, date)
-        if not errors:
-            news_list = load_news()
-            news_list.insert(0, {'author': author, 'text': text, 'date': date})
-            save_news(news_list)
-            return redirect('/new_products')
-        else:
+        delete_index = request.forms.get('delete_index')
+        if delete_index is not None:
+            try:
+                index = int(delete_index)
+                delete_news(index)
+            except Exception as e:
+                with open('error.log', 'a', encoding='utf-8') as log_file:
+                    log_file.write(f"{datetime.now()} DELETE ERROR: {str(e)}\n")
+                    traceback.print_exc(file=log_file)
+            return HTTPResponse(status=303, location='/new_products')
+
+        author = request.forms.get('author', '').strip()
+        text = request.forms.get('text', '').strip()
+        date = request.forms.get('date', '').strip()
+
+        try:
+            errors = validate_news_form(author, text, date)
+            if not errors:
+                add_news(author, text, date)
+                return HTTPResponse(status=303, location='/new_products')
+            else:
+                return template('new_products.tpl',
+                                new_products=load_news(),
+                                error="Please fix the errors in the form.",
+                                errors=errors,
+                                author=author,
+                                text=text,
+                                date=date,
+                                year=datetime.now().year)
+        except HTTPResponse:
+            raise
+        except Exception as e:
+            error_message = f"Exception occurred: {str(e)}"
+            print(error_message)
+            with open('error.log', 'a', encoding='utf-8') as log_file:
+                log_file.write(f"{datetime.now()}: {error_message}\n")
+                traceback.print_exc(file=log_file)
             return template('new_products.tpl',
                             new_products=load_news(),
-                            error="Please fix the errors in the form.",
-                            errors=errors,
+                            error="Internal error: что-то пошло не так.",
+                            errors={},
                             author=author,
                             text=text,
                             date=date,
                             year=datetime.now().year)
 
+    # GET запрос
     return template('new_products.tpl',
                     new_products=load_news(),
                     error=None,
@@ -125,6 +156,7 @@ def new_products():
                     text='',
                     date='',
                     year=datetime.now().year)
+
 
 @route('/logos/<filename>')
 def serve_logo(filename):
