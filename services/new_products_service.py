@@ -10,11 +10,11 @@ def load_news():
             with open(NEWS_FILE, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 if not isinstance(data, list):
-                    print("⚠️ Ожидался список, но получен другой тип.")
+                    print("⚠️ Expected a list but got another type.")
                     return []
                 return sorted(data, key=lambda x: x.get('date', ''), reverse=True)
         except json.JSONDecodeError as e:
-            print(f"⚠️ Ошибка чтения JSON: {e}")
+            print(f"⚠️ JSON read error: {e}")
             return []
     return []
 
@@ -26,16 +26,16 @@ def validate_news_form(author, text, date):
     errors = {}
 
     if not author:
-        errors['author'] = "Поле 'Имя / Название' обязательно."
+        errors['author'] = "The 'Brand / Name' field is required."
     if not text:
-        errors['text'] = "Поле 'Описание' обязательно."
+        errors['text'] = "The 'Description' field is required."
     if not date:
-        errors['date'] = "Поле 'Дата' обязательно."
+        errors['date'] = "The 'Date' field is required."
     else:
         try:
             datetime.strptime(date, '%Y-%m-%d')
         except ValueError:
-            errors['date'] = "Неверный формат даты. Используйте ГГГГ-ММ-ДД."
+            errors['date'] = "Invalid date format. Use YYYY-MM-DD."
 
     return errors
 

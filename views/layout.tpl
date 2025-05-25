@@ -33,6 +33,14 @@
             </div>
         </div>
     </div>
+
+    <div id="orderModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <p id="orderMessage"></p>
+      </div>
+    </div>
+
 </body>
 
 
