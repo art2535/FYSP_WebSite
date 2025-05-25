@@ -6,8 +6,16 @@ NEWS_FILE = 'static/resources/news.json'
 
 def load_news():
     if os.path.exists(NEWS_FILE):
-        with open(NEWS_FILE, 'r', encoding='utf-8') as f:
-            return sorted(json.load(f), key=lambda x: x['date'], reverse=True)
+        try:
+            with open(NEWS_FILE, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                if not isinstance(data, list):
+                    print("⚠️ Ожидался список, но получен другой тип.")
+                    return []
+                return sorted(data, key=lambda x: x.get('date', ''), reverse=True)
+        except json.JSONDecodeError as e:
+            print(f"⚠️ Ошибка чтения JSON: {e}")
+            return []
     return []
 
 def save_news(news_list):
@@ -30,3 +38,14 @@ def validate_news_form(author, text, date):
             errors['date'] = "Неверный формат даты. Используйте ГГГГ-ММ-ДД."
 
     return errors
+
+def add_news(author, text, date):
+    news_list = load_news()
+    news_list.insert(0, {'author': author, 'text': text, 'date': date})
+    save_news(news_list)
+
+def delete_news(index):
+    news_list = load_news()
+    if 0 <= index < len(news_list):
+        del news_list[index]
+        save_news(news_list)
