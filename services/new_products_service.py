@@ -1,6 +1,8 @@
 import os
 import json
 from datetime import datetime
+import traceback
+from bottle import template, HTTPResponse
 
 NEWS_FILE = 'static/resources/news.json'
 
@@ -25,10 +27,33 @@ def save_news(news_list):
 def validate_news_form(author, text, date):
     errors = {}
 
-    if not author:
-        errors['author'] = "The 'Brand / Name' field is required."
-    if not text:
-        errors['text'] = "The 'Description' field is required."
+    def is_invalid_field(value):
+        return (
+            not value or
+            len(value.strip()) < 5 or
+            value.strip().isdigit()
+        )
+
+    if is_invalid_field(author):
+        if not author.strip():
+            errors['author'] = "The 'Brand / Name' field is required."
+        elif len(author.strip()) < 5:
+            errors['author'] = "Brand / Name must be at least 5 characters."
+        elif author.strip().isdigit():
+            errors['author'] = "Brand / Name cannot be only numbers."
+        elif len(author.strip()) > 100:
+            errors['author'] = "Brand / Name must be less than 100 characters.."
+
+    if is_invalid_field(text):
+        if not text.strip():
+            errors['text'] = "The 'Description' field is required."
+        elif len(text.strip()) < 5:
+            errors['text'] = "Description must be at least 5 characters."
+        elif text.strip().isdigit():
+            errors['text'] = "Description cannot be only numbers."
+    elif len(text.strip()) > 200:
+        errors['text'] = "Description must not exceed 200 characters."
+
     if not date:
         errors['date'] = "The 'Date' field is required."
     else:
@@ -44,6 +69,7 @@ def validate_news_form(author, text, date):
             errors['date'] = "Invalid date format. Use YYYY-MM-DD."
 
     return errors
+
 
 def add_news(author, text, date, image=None):
     news_list = load_news()
@@ -76,3 +102,68 @@ def enrich_news_items(news_items):
         item['is_future'] = item_date > today
         item['order_label'] = "Pre-order" if item['is_future'] else "Order"
     return news_items
+
+def process_news_form_submission(request):
+    images = find_images()
+
+    delete_index = request.forms.get('delete_index')
+    if delete_index is not None:
+        try:
+            delete_news(int(delete_index))
+        except Exception as e:
+            log_exception(e, context="DELETE ERROR")
+        return HTTPResponse(status=303, location='/new_products')
+
+    author = request.forms.get('author', '').strip()
+    text = request.forms.get('text', '').strip()
+    date = request.forms.get('date', '').strip()
+    image = request.forms.get('image', '').strip()
+
+    errors = validate_news_form(author, text, date)
+    if not errors:
+        add_news(author, text, date, image if image else None)
+        return HTTPResponse(status=303, location='/new_products')
+
+    return template('new_products.tpl',
+                    new_products=enrich_news_items(load_news()),
+                    error="Please fix the errors in the form.",
+                    errors=errors,
+                    author=author,
+                    text=text,
+                    date=date,
+                    image=image,
+                    images=images,
+                    year=datetime.now().year)
+
+
+def render_news_page():
+    return template('new_products.tpl',
+                    new_products=enrich_news_items(load_news()),
+                    error=None,
+                    errors={},
+                    author='',
+                    text='',
+                    date='',
+                    image='',
+                    images=find_images(),
+                    year=datetime.now().year)
+
+
+def log_and_render_error(exception):
+    log_exception(exception, context="GENERAL ERROR")
+    return template('new_products.tpl',
+                    new_products=enrich_news_items(load_news()),
+                    error="Internal error: что-то пошло не так.",
+                    errors={},
+                    author='',
+                    text='',
+                    date='',
+                    image='',
+                    images=find_images(),
+                    year=datetime.now().year)
+
+
+def log_exception(e, context="ERROR"):
+    with open('error.log', 'a', encoding='utf-8') as log_file:
+        log_file.write(f"{datetime.now()} {context}: {str(e)}\n")
+        traceback.print_exc(file=log_file)
