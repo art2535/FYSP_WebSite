@@ -2,23 +2,163 @@
   "products": [
     {
       "id": 1,
-      "name": "Intel Core i9-12900K Processor"
+      "name": "Processor Intel Core i7 14700KF LGA1700 OEM"
     },
     {
       "id": 2,
-      "name": "NVIDIA GeForce RTX 3080 Graphics Card"
+      "name": "Processor Intel Core i5 11600KF LGA1200 OEM"
     },
     {
       "id": 3,
-      "name": "Samsung 970 EVO 1TB NVMe SSD"
+      "name": "Processor Intel Core i9 12900K OEM"
     },
     {
       "id": 4,
-      "name": "Corsair Vengeance 32GB DDR5 RAM"
+      "name": "Processor AMD Ryzen 5 7500F OEM"
     },
     {
       "id": 5,
-      "name": "ASUS ROG Strix Z690 Motherboard"
+      "name": "Processor AMD Ryzen 5 5600 OEM"
+    },
+    {
+      "id": 6,
+      "name": "Video card Sapphire AMD Radeon RX 7800 XT NITRO+"
+    },
+    {
+      "id": 7,
+      "name": "Video card MSI GeForce RTX 4060 VENTUS 2X BLACK OC"
+    },
+    {
+      "id": 8,
+      "name": "Video card Palit GeForce RTX 5080 GameRock"
+    },
+    {
+      "id": 9,
+      "name": "Video card GIGABYTE AMD Radeon RX 6900 XT AORUS MASTER (rev. 2.0)"
+    },
+    {
+      "id": 10,
+      "name": "Video card MSI GeForce GTX 1650 D6 VENTUS XS OCV3"
+    },
+    {
+      "id": 11,
+      "name": "Motherboard MSI MPG B550 GAMING PLUS"
+    },
+    {
+      "id": 12,
+      "name": "Motherboard GIGABYTE B550M AORUS ELITE"
+    },
+    {
+      "id": 13,
+      "name": "Motherboard ASRock B760M Pro RS/D4"
+    },
+    {
+      "id": 14,
+      "name": "Motherboard MSI PRO Z790-P WIFI"
+    },
+    {
+      "id": 15,
+      "name": "Motherboard MSI MAG B760M MORTAR WIFI II"
+    },
+    {
+      "id": 16,
+      "name": "Power unit Cougar GEX850"
+    },
+    {
+      "id": 17,
+      "name": "Power unit DEEPCOOL PF650"
+    },
+    {
+      "id": 18,
+      "name": "Power unit Cougar GEX X2 1000 1000W"
+    },
+    {
+      "id": 19,
+      "name": "Power unit MSI MPG A850G PCIE5"
+    },
+    {
+      "id": 20,
+      "name": "Power unit ZALMAN GigaMax (GVII) 750W"
+    },
+    {
+      "id": 21,
+      "name": "1000 Gb M.2 NVMe storage device ADATA XPG GAMMIX S11 Pro"
+    },
+    {
+      "id": 22,
+      "name": "1000 Gb M.2 NVMe storage device Samsung 970 EVO Plus"
+    },
+    {
+      "id": 23,
+      "name": "1024 Gb M.2 NVMe storage device ARDOR GAMING Ally AL1288"
+    },
+    {
+      "id": 24,
+      "name": "4 Tb hard drive Seagate SkyHawk"
+    },
+    {
+      "id": 25,
+      "name": "1 Tb hard drive WD Bluek"
+    },
+    {
+      "id": 26,
+      "name": "Random access memory Kingston FURY Beast Black 32 Gb"
+    },
+    {
+      "id": 27,
+      "name": "Random access memory ADATA XPG Lancer Blade RGB 32 Gb"
+    },
+    {
+      "id": 28,
+      "name": "Random access memory ADATA XPG Lancer 16 Gb"
+    },
+    {
+      "id": 29,
+      "name": "Random access memory ADATA XPG GAMMIX D10 16 Gb"
+    },
+    {
+      "id": 30,
+      "name": "Random access memory Acer Predator Pallas II 32 Gb"
+    },
+    {
+      "id": 31,
+      "name": "Cooler for the processor DEEPCOOL AG400 BK ARGB"
+    },
+    {
+      "id": 32,
+      "name": "Cooler for the processor DEEPCOOL AK400 DIGITAL"
+    },
+    {
+      "id": 33,
+      "name": "Cooler for the processor ID-COOLING SE-903-XT BLACK"
+    },
+    {
+      "id": 34,
+      "name": "Cooler for the processor DEEPCOOL GAMMAXX 300 FURY"
+    },
+    {
+      "id": 35,
+      "name": "Cooler for the processor PCCooler Paladin EX400 ARGB"
+    },
+    {
+      "id": 36,
+      "name": "Body ARDOR GAMING Rare M2 ARGB black"
+    },
+    {
+      "id": 37,
+      "name": "Body Cougar FV150 RGB black"
+    },
+    {
+      "id": 38,
+      "name": "Body DEEPCOOL CC560 V2 black"
+    },
+    {
+      "id": 39,
+      "name": "Body Cougar MX330-F black"
+    },
+    {
+      "id": 40,
+      "name": "Body ARDOR GAMING Rare M2 black"
     }
   ]
 }
