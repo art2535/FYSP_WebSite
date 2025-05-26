@@ -126,75 +126,22 @@ def add_partner():
                        errors=result['errors'])
     redirect('/partners')
 
-import traceback
-
 @route('/new_products', method=['GET', 'POST'])
 def new_products():
-    images = find_images()
+    try:
+        if request.method == 'POST':
+            from services.new_products_service import process_news_form_submission
+            return process_news_form_submission(request)
 
-    if request.method == 'POST':
-        delete_index = request.forms.get('delete_index')
-        if delete_index is not None:
-            try:
-                index = int(delete_index)
-                delete_news(index)
-            except Exception as e:
-                with open('error.log', 'a', encoding='utf-8') as log_file:
-                    log_file.write(f"{datetime.now()} DELETE ERROR: {str(e)}\n")
-                    traceback.print_exc(file=log_file)
-            return HTTPResponse(status=303, location='/new_products')
+        # GET запрос
+        from services.new_products_service import render_news_page
+        return render_news_page()
 
-        author = request.forms.get('author', '').strip()
-        text = request.forms.get('text', '').strip()
-        date = request.forms.get('date', '').strip()
-        image = request.forms.get('image', '').strip()  # <-- добавлено
-
-        try:
-            errors = validate_news_form(author, text, date)
-            if not errors:
-                add_news(author, text, date, image if image else None)  # <-- добавлено
-                return HTTPResponse(status=303, location='/new_products')
-            else:
-                return template('new_products.tpl',
-                                new_products=enrich_news_items(load_news()),
-                                error="Please fix the errors in the form.",
-                                errors=errors,
-                                author=author,
-                                text=text,
-                                date=date,
-                                image=image,
-                                images=images,
-                                year=datetime.now().year)
-        except HTTPResponse:
-            raise
-        except Exception as e:
-            error_message = f"Exception occurred: {str(e)}"
-            print(error_message)
-            with open('error.log', 'a', encoding='utf-8') as log_file:
-                log_file.write(f"{datetime.now()}: {error_message}\n")
-                traceback.print_exc(file=log_file)
-            return template('new_products.tpl',
-                            new_products=enrich_news_items(load_news()),
-                            error="Internal error: что-то пошло не так.",
-                            errors={},
-                            author=author,
-                            text=text,
-                            date=date,
-                            image=image,
-                            images=images,
-                            year=datetime.now().year)
-
-    # GET запрос
-    return template('new_products.tpl',
-                    new_products = enrich_news_items(load_news()),
-                    error=None,
-                    errors={},
-                    author='',
-                    text='',
-                    date='',
-                    image='',
-                    images=images,
-                    year=datetime.now().year)
+    except HTTPResponse as http_resp:
+        raise http_resp
+    except Exception as e:
+        from services.new_products_service import log_and_render_error
+        return log_and_render_error(e)
 
 
 @route('/logos/<filename>')
