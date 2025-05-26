@@ -53,6 +53,8 @@
     margin: 0;
     font-size: 2rem;
     font-weight: 600;
+    word-break: break-word; /* Позволяет переносить длинные слова */
+    white-space: normal; /* Разрешает перенос строк */
 }
 
 .card-header small {
@@ -68,7 +70,8 @@
 }
 
 .card-text {
-    word-wrap:inherit;
+    word-break: break-word;
+    white-space: normal;
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
