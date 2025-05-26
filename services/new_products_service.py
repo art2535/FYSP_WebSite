@@ -33,15 +33,24 @@ def validate_news_form(author, text, date):
         errors['date'] = "The 'Date' field is required."
     else:
         try:
-            datetime.strptime(date, '%Y-%m-%d')
+            input_date = datetime.strptime(date, '%Y-%m-%d').date()
+            today = datetime.now().date()
+            one_year_ago = today.replace(year=today.year - 1)
+            one_year_future = today.replace(year=today.year + 1)
+
+            if input_date < one_year_ago or input_date > one_year_future:
+                errors['date'] = "Date must be within one year from today."
         except ValueError:
             errors['date'] = "Invalid date format. Use YYYY-MM-DD."
 
     return errors
 
-def add_news(author, text, date):
+def add_news(author, text, date, image=None):
     news_list = load_news()
-    news_list.insert(0, {'author': author, 'text': text, 'date': date})
+    item = {'author': author, 'text': text, 'date': date}
+    if image:
+        item['image'] = image
+    news_list.insert(0, item)
     save_news(news_list)
 
 def delete_news(index):
@@ -49,3 +58,13 @@ def delete_news(index):
     if 0 <= index < len(news_list):
         del news_list[index]
         save_news(news_list)
+
+def find_images(root_dir='static/resources'):
+    supported_ext = ('.png', '.jpeg', '.jpg')
+    image_files = []
+    for dirpath, _, filenames in os.walk(root_dir):
+        for file in filenames:
+            if file.lower().endswith(supported_ext):
+                relative_path = os.path.relpath(os.path.join(dirpath, file), 'static/resources')
+                image_files.append(relative_path.replace("\\", "/"))  # for Windows compatibility
+    return sorted(image_files)

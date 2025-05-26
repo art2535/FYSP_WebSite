@@ -1,17 +1,26 @@
 [
   {
-    "author": "AMD Ryzen 10 5600H",
-    "text": "ghfghf",
-    "date": "2025-05-27"
+    "author": "Coller",
+    "text": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
+    "date": "2025-03-25",
+    "image": "cooler_img/cooler4.png"
+  },
+  {
+    "author": "coller",
+    "text": "fdfsdf",
+    "date": "2025-05-20",
+    "image": "processor_img/processor.png"
+  },
+  {
+    "author": "coller",
+    "text": "gggg",
+    "date": "2025-05-20",
+    "image": "cooler_img/cooler2.png"
   },
   {
     "author": "AMD Ryzen 10 5600H",
-    "text": "Hey hey hey",
-    "date": "2025-05-26"
-  },
-  {
-    "author": "AMD Ryzen 10 5600H",
-    "text": "ewrwerwe",
-    "date": "2025-05-26"
+    "text": "New!!",
+    "date": "2025-03-25",
+    "image": "motherboard_img/motherboard.png"
   }
 ]

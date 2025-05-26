@@ -5,7 +5,7 @@ from bottle import HTTPResponse  # Добавим этот импорт
 
 from services.partner_service import get_partners, add_partners
 from services.user_service import register_user, authenticate_user, logout_user
-from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news
+from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news,find_images
 
 @route('/')
 @route('/home')
@@ -100,6 +100,8 @@ import traceback
 
 @route('/new_products', method=['GET', 'POST'])
 def new_products():
+    images = find_images()
+
     if request.method == 'POST':
         delete_index = request.forms.get('delete_index')
         if delete_index is not None:
@@ -115,11 +117,12 @@ def new_products():
         author = request.forms.get('author', '').strip()
         text = request.forms.get('text', '').strip()
         date = request.forms.get('date', '').strip()
+        image = request.forms.get('image', '').strip()  # <-- добавлено
 
         try:
             errors = validate_news_form(author, text, date)
             if not errors:
-                add_news(author, text, date)
+                add_news(author, text, date, image if image else None)  # <-- добавлено
                 return HTTPResponse(status=303, location='/new_products')
             else:
                 return template('new_products.tpl',
@@ -129,6 +132,8 @@ def new_products():
                                 author=author,
                                 text=text,
                                 date=date,
+                                image=image,
+                                images=images,
                                 year=datetime.now().year)
         except HTTPResponse:
             raise
@@ -145,6 +150,8 @@ def new_products():
                             author=author,
                             text=text,
                             date=date,
+                            image=image,
+                            images=images,
                             year=datetime.now().year)
 
     # GET запрос
@@ -155,6 +162,8 @@ def new_products():
                     author='',
                     text='',
                     date='',
+                    image='',
+                    images=images,
                     year=datetime.now().year)
 
 
