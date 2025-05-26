@@ -4,7 +4,7 @@
 <!-- Заголовок страницы с логотипом -->
 <div class="jumbotron constructor-header">
     <div class="constructor-header-text">
-        <h1>Latest Products</h1>
+        <h1>New Products</h1>
         <p class="lead">Newest products and trends in the tech world</p>
     </div>
     <img src="/static/resources/logo.png" alt="New Products Logo" class="constructor-logo">

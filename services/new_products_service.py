@@ -56,8 +56,8 @@ def validate_news_form(author, text, date):
             errors['author'] = "Brand / Name must be at least 5 characters."
         elif author.strip().isdigit():
             errors['author'] = "Brand / Name cannot be only numbers."
-        elif len(author.strip()) > 100:
-            errors['author'] = "Brand / Name must be less than 100 characters.."
+    if len(author.strip()) > 100:
+        errors['author'] = "Brand / Name must be less than 100 characters.."
 
     # Проверка поля описания
     if is_invalid_field(text):
