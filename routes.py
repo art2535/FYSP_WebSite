@@ -4,7 +4,7 @@ import traceback
 from bottle import HTTPResponse  # Добавим этот импорт
 
 from services.partner_service import get_partners, add_partners
-from services.reviews_service import add_review, get_products, get_reviews
+from services.reviews_service import add_review, get_form_data_from_request, get_products, get_reviews, validate_review
 from services.user_service import register_user, authenticate_user, logout_user
 from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news,find_images,enrich_news_items
 
@@ -78,31 +78,44 @@ def logout():
 @route('/reviews', method=['GET', 'POST'])
 @view('reviews')
 def reviews():
-    # If form is submitted (POST request)
+    errors = []
+    form_data = get_form_data_from_request(request)
+
     if request.method == 'POST':
-        # Get form data
-        nickname = request.forms.get('nickname')
-        category = request.forms.get('category')
-        rating = int(request.forms.get('rating'))
-        text = request.forms.get('text')
-        product_id = request.forms.get('product_id')
+        errors = validate_review(
+            form_data['nickname'],
+            form_data['category'],
+            form_data['rating'],
+            form_data['text'],
+            form_data['product_id']
+        )
 
-        # Add new review
-        add_review(nickname, category, rating, text, product_id)
+        if not errors:
+            add_review(
+                form_data['nickname'],
+                form_data['category'],
+                form_data['rating'],
+                form_data['text'],
+                form_data['product_id']
+            )
+            redirect('/reviews')
 
-        # Redirect to reviews page after adding
-        redirect('/reviews')
-
-    # Get all reviews and products for display
-    reviews_data = get_reviews()
-    products_data = get_products()
+    filter_category = request.query.get('filter_category', 'all')
+    sort_order = request.query.get('sort_order', '')
+    if not sort_order:
+        sort_order = 'new'
 
     return dict(
         title='Reviews',
-        reviews=reviews_data,
-        products=products_data,
-        year=datetime.now().year
+        reviews=get_reviews(filter_category, sort_order),
+        products=get_products(),
+        year=datetime.now().year,
+        errors=errors,
+        form_data=form_data,
+        filter_category=filter_category,
+        sort_order=sort_order
     )
+
 
 @route('/partners')
 @view('partner')

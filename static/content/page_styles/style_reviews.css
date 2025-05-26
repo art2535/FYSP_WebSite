@@ -7,44 +7,31 @@ body {
 
 .jumbotron {
     background-color: orange;
-    padding: 40px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
 }
 
     .jumbotron h1 {
         text-align: center;
         margin-bottom: 20px;
         font-size: 2.5em;
-        color: #2c3e50;
     }
 
     .jumbotron .lead {
         text-align: center;
         font-size: 1.2em;
-        color: #7f8c8d;
     }
 
-.filters {
-    text-align: center;
-    margin-bottom: 30px;
-}
 
-.filter-button {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 0.95em;
-}
 
-    .filter-button:hover {
-        background-color: #2980b9;
-    }
 
 .reviews-container {
     max-width: 900px;
@@ -124,7 +111,6 @@ body {
     color: #95a5a6;
 }
 
-/* Стили для формы добавления отзыва */
 .review-form {
     margin: 30px auto;
     padding: 30px;
@@ -164,14 +150,14 @@ body {
     .review-form textarea {
         resize: none;
         min-height: 150px;
-        max-width: 90%;
+        max-width: 50%;
         margin: 0 auto;
         display: block;
     }
 
 
     .review-form button {
-        padding: 10px 20px; /* уменьшили padding */
+        padding: 10px 20px;
         background-color: #2ecc71;
         color: white;
         border: none;
@@ -179,9 +165,9 @@ body {
         cursor: pointer;
         transition: background-color 0.3s ease;
         font-size: 1.1em;
-        width: auto; /* чтобы кнопка не растягивалась на всю ширину */
-        margin: 0 auto; /* выравниваем по центру */
-        display: block; /* для центровки */
+        width: auto;
+        margin: 0 auto;
+        display: block;
         margin-top: 20px;
     }
 
@@ -199,25 +185,29 @@ body {
 }
 
 .filter-button {
+    flex: 1 1 150px;
+    max-width: 150px;
     padding: 8px 12px;
     background-color: orange;
+    color: white;
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    text-align: center;
 }
 
     .filter-button:hover {
-        background-color: #e9ecef;
+        background-color: #ff9900;
     }
 
 .leave-review-link {
-    padding: 8px 12px;
-    background-color: #007bff;
+    padding: 10px 20px;
+    background: linear-gradient(180deg, #1fc42f, #28a745);
     color: white;
-    text-decoration: none;
+    border: none;
     border-radius: 4px;
-    font-size: 14px;
+    cursor: pointer;
 }
 
     .leave-review-link:hover {
@@ -283,4 +273,74 @@ button[type="submit"] {
         .form-row select {
             width: 100%;
         }
+}
+
+.filter-card {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 30px 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.filter-section {
+    margin-bottom: 30px;
+}
+
+.filter-card h2 {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #2c3e50;
+}
+
+.error-popup {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f44336;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    max-width: 90%;
+    font-size: 14px;
+    animation: slideDown 0.5s ease forwards;
+}
+
+    .error-popup ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .error-popup .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background: transparent;
+        border: none;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(40px);
+    }
+}
+
+.error-popup ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
 }

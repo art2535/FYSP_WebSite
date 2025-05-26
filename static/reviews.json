@@ -1,0 +1,96 @@
+{
+  "reviews": [
+    {
+      "avatar_url": "/static/resources/avatars/avatar1.jpg",
+      "nickname": "Denlelush",
+      "category": "product",
+      "rating": 4,
+      "text": "I bought a figure of an anime creature, it seems to work, but it leaves visible fingerprints.",
+      "date": "2025-05-14",
+      "product_id": "1",
+      "product_name": "Processor Intel Core i7 14700KF LGA1700 OEM"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar2.jpg",
+      "nickname": "Kirill",
+      "category": "company",
+      "rating": 5,
+      "text": "The company is great, I want to work here...",
+      "date": "2025-05-10"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar3.jpg",
+      "nickname": "Andrew",
+      "category": "product",
+      "rating": 3,
+      "text": "They were supposed to get an iPhone 15 PRO MAX, but they were given an iPhone XR instead.",
+      "date": "2025-05-08",
+      "product_id": "2",
+      "product_name": "Processor Intel Core i5 11600KF LGA1200 OEM"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar4.jpg",
+      "nickname": "Olga",
+      "category": "product",
+      "rating": 5,
+      "text": "The MSI MPG B550 GAMING PLUS motherboard works perfectly with my Ryzen CPU. Highly recommend!",
+      "date": "2025-05-20",
+      "product_id": "11",
+      "product_name": "Motherboard MSI MPG B550 GAMING PLUS"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar2.jpg",
+      "nickname": "Ivan",
+      "category": "company",
+      "rating": 4,
+      "text": "Good prices and fast shipping, but customer support could be better.",
+      "date": "2025-05-22"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar1.jpg",
+      "nickname": "Elena",
+      "category": "product",
+      "rating": 4,
+      "text": "The Sapphire AMD Radeon RX 7800 XT NITRO+ is a beast for gaming. Great performance!",
+      "date": "2025-05-25",
+      "product_id": "6",
+      "product_name": "Video card Sapphire AMD Radeon RX 7800 XT NITRO+"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar3.jpg",
+      "nickname": "NewGuest",
+      "category": "company",
+      "rating": 3,
+      "text": "Test",
+      "date": "2025-05-26"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar2.jpg",
+      "nickname": "OldGuest",
+      "category": "product",
+      "rating": 5,
+      "text": "It's good cooler!",
+      "date": "2025-05-26",
+      "product_id": "32",
+      "product_name": "Cooler for the processor DEEPCOOL AK400 DIGITAL"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar1.jpg",
+      "nickname": "Kirill2",
+      "category": "company",
+      "rating": 5,
+      "text": "Test",
+      "date": "2025-05-26"
+    },
+    {
+      "avatar_url": "/static/resources/avatars/avatar3.jpg",
+      "nickname": "Andrew2",
+      "category": "product",
+      "rating": 3,
+      "text": "Test",
+      "date": "2025-05-26",
+      "product_id": "1",
+      "product_name": "Processor Intel Core i7 14700KF LGA1700 OEM"
+    }
+  ]
+}
