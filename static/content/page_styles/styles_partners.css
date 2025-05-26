@@ -83,10 +83,14 @@ h1 {
 
     .partner-form-container form {
         max-width: 600px;
+        display: flex; /* Добавляем flex для центрирования */
+        flex-direction: column;
+        align-items: center; /* Центрируем содержимое формы */
     }
 
     .partner-form-container .form-group {
         margin-bottom: 15px;
+        width: 100%; /* Поля формы остаются на всю ширину */
     }
 
 .partner-logo {
@@ -98,8 +102,12 @@ h2 {
 }
 
 .partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .partner27 {
@@ -111,14 +119,15 @@ h2 {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin-bottom: 25px;
-    width: fit-content;
-    max-width: 100%;
+    min-width: 300px;
+    width: calc(33.33% - 40px / 3);
     background-color: #fff;
+    box-sizing: border-box;
 }
 
 .partner-info {
     flex: 1;
+    min-width: 200px;
 }
 
 .partner-logo-wrapper {
@@ -127,8 +136,10 @@ h2 {
 
 .company-logo {
     max-height: 100px;
+    max-width: 100px;
     margin-top: 5px;
     display: block;
+    object-fit: contain;
 }
 
 .error-message {
