@@ -5,7 +5,7 @@ from bottle import HTTPResponse  # Добавим этот импорт
 
 from services.partner_service import get_partners, add_partners
 from services.user_service import register_user, authenticate_user, logout_user
-from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news,find_images
+from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news,find_images,enrich_news_items
 
 @route('/')
 @route('/home')
@@ -126,7 +126,7 @@ def new_products():
                 return HTTPResponse(status=303, location='/new_products')
             else:
                 return template('new_products.tpl',
-                                new_products=load_news(),
+                                new_products=enrich_news_items(load_news()),
                                 error="Please fix the errors in the form.",
                                 errors=errors,
                                 author=author,
@@ -144,7 +144,7 @@ def new_products():
                 log_file.write(f"{datetime.now()}: {error_message}\n")
                 traceback.print_exc(file=log_file)
             return template('new_products.tpl',
-                            new_products=load_news(),
+                            new_products=enrich_news_items(load_news()),
                             error="Internal error: что-то пошло не так.",
                             errors={},
                             author=author,
@@ -156,7 +156,7 @@ def new_products():
 
     # GET запрос
     return template('new_products.tpl',
-                    new_products=load_news(),
+                    new_products = enrich_news_items(load_news()),
                     error=None,
                     errors={},
                     author='',

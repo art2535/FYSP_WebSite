@@ -1,26 +1,32 @@
 [
   {
-    "author": "Coller",
-    "text": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",
-    "date": "2025-03-25",
-    "image": "cooler_img/cooler4.png"
+    "author": "ASUS ROG Maximus Z890 Extreme",
+    "text": "High-end motherboard featuring the Z890 chipset, Thunderbolt 5, four NVMe slots, and next-gen Wi-Fi 7 support.",
+    "date": "2026-03-22",
+    "image": "motherboard_img/motherboard4.png"
   },
   {
-    "author": "coller",
-    "text": "fdfsdf",
-    "date": "2025-05-20",
-    "image": "processor_img/processor.png"
+    "author": "AMD Ryzen 9 9950X",
+    "text": "A flagship 16-core processor based on the Zen 5+ architecture, featuring expanded cache, DDR6, and PCIe 6.0 support.",
+    "date": "2025-08-12",
+    "image": "processor_img/processor5.png"
   },
   {
-    "author": "coller",
-    "text": "gggg",
-    "date": "2025-05-20",
-    "image": "cooler_img/cooler2.png"
+    "author": "Corsair Dominator Titanium DDR6 9600 MHz (32GBx2)",
+    "text": "Ultra-fast DDR6 RAM kit with 9600 MHz speed, iCUE RGB lighting, and automatic overclocking profiles.",
+    "date": "2025-05-10",
+    "image": "random_access_memory_img/random_access_memory3.png"
   },
   {
-    "author": "AMD Ryzen 10 5600H",
-    "text": "New!!",
-    "date": "2025-03-25",
-    "image": "motherboard_img/motherboard.png"
+    "author": "Intel Core Ultra 10 15900K",
+    "text": "A 24-core Ultra 10th Gen CPU with enhanced energy efficiency, LPDDR6 support, and an integrated neural engine for AI processing.",
+    "date": "2025-05-01",
+    "image": "processor_img/Processor2.png"
+  },
+  {
+    "author": "NVIDIA GeForce RTX 5090 Ti",
+    "text": "Next-gen graphics card with 48GB of GDDR7 memory, 4th-gen ray tracing cores, and DLSS 5 AI acceleration.",
+    "date": "2025-04-05",
+    "image": "video_card_img/video_card2.png"
   }
 ]

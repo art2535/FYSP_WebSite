@@ -68,3 +68,11 @@ def find_images(root_dir='static/resources'):
                 relative_path = os.path.relpath(os.path.join(dirpath, file), 'static/resources')
                 image_files.append(relative_path.replace("\\", "/"))  # for Windows compatibility
     return sorted(image_files)
+
+def enrich_news_items(news_items):
+    today = datetime.now().date()
+    for item in news_items:
+        item_date = datetime.strptime(item['date'], "%Y-%m-%d").date()
+        item['is_future'] = item_date > today
+        item['order_label'] = "Pre-order" if item['is_future'] else "Order"
+    return news_items
