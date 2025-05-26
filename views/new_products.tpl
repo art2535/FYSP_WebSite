@@ -22,14 +22,23 @@
                     <small>{{item['date']}}</small>
                 </div>
                 <div class="card-body">
-                    <p>{{item['text']}}</p>
-                    <form method="post" class="delete-form" style="display:inline;">
-                        <input type="hidden" name="delete_index" value="{{index}}">
-                        <button type="submit" class="btn-delete">Delete</button>
-                    </form>
-                    <button onclick="orderProduct('{{item['author']}}')" class="btn-order">
-                        {{'Pre-order' if is_future else 'Order'}}
-                    </button>
+                    <div class="card-text">
+                        <p>{{item['text']}}</p>
+                    </div>
+                    % if item.get('image'):
+                        <div class="product-image">
+                            <img src="/static/resources/{{item['image']}}" alt="Product Image">
+                        </div>
+                    % end
+                    <div class="button-group">
+                        <form method="post" class="delete-form" style="display:inline;">
+                            <input type="hidden" name="delete_index" value="{{index}}">
+                            <button type="submit" class="btn-delete">Delete</button>
+                        </form>
+                        <button onclick="orderProduct('{{item['author']}}')" class="btn-order">
+                            {{'Pre-order' if is_future else 'Order'}}
+                        </button>
+                    </div>
                 </div>
             </div>
         % end
@@ -39,20 +48,38 @@
 
     <form method="post" class="news-form">
         <h2>Add a New Product</h2>
-        % if error:
-            <div class="form-error">{{!error}}</div>
-        % end
+
         <div class="form-group">
             <label for="author">Brand / Product Name *</label>
             <input type="text" name="author" id="author" class="form-control" value="{{author or ''}}" required>
+            % if errors.get('author'):
+                <div class="form-error">{{errors['author']}}</div>
+            % end
         </div>
+
         <div class="form-group">
             <label for="text">Description *</label>
             <textarea name="text" id="text" class="form-control" required>{{text or ''}}</textarea>
+            % if errors.get('text'):
+                <div class="form-error">{{errors['text']}}</div>
+            % end
         </div>
+
         <div class="form-group">
             <label for="date">Date (YYYY-MM-DD) *</label>
             <input type="date" name="date" id="date" class="form-control" value="{{date or ''}}" required>
+            % if errors.get('date'):
+                <div class="form-error">{{errors['date']}}</div>
+            % end
+        </div>
+        <div class="form-group">
+            <label for="image">Choose an Image (optional)</label>
+            <select name="image" id="image" class="form-control-image">
+                <option value="">-- No Image --</option>
+                % for img in images:
+                    <option value="{{img}}" {{'selected' if image == img else ''}}>{{img}}</option>
+                % end
+            </select>
         </div>
         <button type="submit" class="btn-submit">Submit</button>
     </form>
