@@ -60,7 +60,7 @@
             <div class="partner-info">
                 <strong>{{c['name']}}</strong> ({{c['date']}})<br>
                 {{c['description']}}<br>
-                Contact: {{c['phone']}}<br>
+                Contact: {{c['phone']}}
             </div>
             % if c.get('logo'):
                 <div class="partner-logo-wrapper">
