@@ -1,3 +1,4 @@
+/* Page base styles */
 body {
     margin: 0;
     padding: 40px 20px;
@@ -5,6 +6,7 @@ body {
     color: #333;
 }
 
+/* Header banner */
 .jumbotron {
     background-color: orange;
     color: white;
@@ -30,21 +32,20 @@ body {
         font-size: 1.2em;
     }
 
-
-
-
+/* Container for all reviews */
 .reviews-container {
     max-width: 900px;
     margin: 0 auto;
 }
 
+/* Single review block */
 .review {
     display: flex;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
 }
 
@@ -52,6 +53,7 @@ body {
         transform: translateY(-3px);
     }
 
+/* Avatar image styling */
 .avatar {
     width: 70px;
     height: 70px;
@@ -62,6 +64,7 @@ body {
     flex-shrink: 0;
 }
 
+/* Review content layout */
 .review-content {
     flex: 1;
     display: flex;
@@ -69,12 +72,14 @@ body {
     justify-content: space-between;
 }
 
+/* Top info section */
 .top-info {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
+/* Header inside review */
 .review-header {
     display: flex;
     align-items: center;
@@ -82,22 +87,26 @@ body {
     gap: 10px;
 }
 
+/* User nickname */
 .nickname {
     font-weight: 600;
     font-size: 1.1em;
     color: #2c3e50;
 }
 
+/* Review category */
 .category {
     font-size: 0.9em;
     color: #7f8c8d;
 }
 
+/* Stars rating */
 .stars {
     color: #f1c40f;
     font-size: 1.1em;
 }
 
+/* Review text */
 .text {
     font-size: 1em;
     line-height: 1.5;
@@ -105,18 +114,20 @@ body {
     margin: 10px 0;
 }
 
+/* Review date */
 .date {
     text-align: right;
     font-size: 0.85em;
     color: #95a5a6;
 }
 
+/* Review submission form */
 .review-form {
     margin: 30px auto;
     padding: 30px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     max-width: 900px;
 }
 
@@ -155,7 +166,6 @@ body {
         display: block;
     }
 
-
     .review-form button {
         padding: 10px 20px;
         background-color: #2ecc71;
@@ -175,6 +185,7 @@ body {
             background-color: #27ae60;
         }
 
+/* Filters section */
 .filters {
     display: flex;
     justify-content: center;
@@ -201,6 +212,7 @@ body {
         background-color: #ff9900;
     }
 
+/* Link to leave a review */
 .leave-review-link {
     padding: 10px 20px;
     background: linear-gradient(180deg, #1fc42f, #28a745);
@@ -214,6 +226,7 @@ body {
         background-color: #0056b3;
     }
 
+/* Form rows */
 .form-row {
     display: flex;
     gap: 10px;
@@ -230,6 +243,7 @@ body {
         min-width: 150px;
     }
 
+/* Product select row */
 .product-row {
     display: none;
     width: 30%;
@@ -243,6 +257,7 @@ body {
         max-width: 100%;
     }
 
+/* Textarea */
 textarea {
     width: 100%;
     padding: 8px;
@@ -251,6 +266,7 @@ textarea {
     margin-bottom: 15px;
 }
 
+/* Submit button */
 button[type="submit"] {
     padding: 10px 20px;
     background: linear-gradient(180deg, #1fc42f, #28a745);
@@ -264,6 +280,7 @@ button[type="submit"] {
         background-color: #0056b3;
     }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
     .form-row {
         flex-direction: column;
@@ -275,16 +292,18 @@ button[type="submit"] {
         }
 }
 
+/* Filter card container */
 .filter-card {
     background-color: #f9f9f9;
     border-radius: 20px;
     padding: 30px 20px;
     margin: 30px auto;
     max-width: 600px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: center;
 }
 
+/* Filter section spacing */
 .filter-section {
     margin-bottom: 30px;
 }
@@ -295,6 +314,7 @@ button[type="submit"] {
     color: #2c3e50;
 }
 
+/* Error popup */
 .error-popup {
     position: fixed;
     top: 10px;
@@ -313,7 +333,8 @@ button[type="submit"] {
 
     .error-popup ul {
         margin: 0;
-        padding-left: 20px;
+        padding-left: 0;
+        list-style: none;
     }
 
     .error-popup .close-btn {
@@ -327,6 +348,7 @@ button[type="submit"] {
         cursor: pointer;
     }
 
+/* Animation for popup */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -337,10 +359,4 @@ button[type="submit"] {
         opacity: 1;
         transform: translateX(-50%) translateY(40px);
     }
-}
-
-.error-popup ul {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
 }

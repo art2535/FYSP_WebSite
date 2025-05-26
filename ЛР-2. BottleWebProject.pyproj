@@ -21,7 +21,7 @@
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>test*.py</UnitTestPattern>
-    <UnitTestRootDirectory>.</UnitTestRootDirectory>
+    <UnitTestRootDirectory>tests/</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +54,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tests\test_partner_validation.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_reviews_validation.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tests\__init__.py">
@@ -161,9 +164,6 @@
     <Content Include="static\resources\video_card_img\video_card3.png" />
     <Content Include="static\resources\video_card_img\video_card4.png" />
     <Content Include="static\resources\video_card_img\video_card5.png" />
-    <Content Include="static\reviews.json">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
