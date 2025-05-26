@@ -45,7 +45,6 @@ bld/
 
 static/resources/logos
 static/resources/users.json
-static/resources/partners.json
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
