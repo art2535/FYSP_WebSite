@@ -1,0 +1,37 @@
+[
+    {
+        "name": "AlphaTech",
+        "description": "Leading technology solutions provider",
+        "phone": "+7(495)123-45-67",
+        "date": "2025-05-20",
+        "logo": "2025-05-07-111653.png"
+    },
+    {
+        "name": "ZetaCorp",
+        "description": "Innovative software development",
+        "phone": "+7(812)987-65-43",
+        "date": "2025-05-22",
+        "logo": "2025-05-07-111653.png"
+    },
+    {
+        "name": "betaSolutions",
+        "description": "Custom IT services and consulting",
+        "phone": "+7(926)555-12-34",
+        "date": "2025-05-21",
+        "logo": "2025-05-07-111653.png"
+    },
+    {
+        "name": "GUAP",
+        "description": "The best University",
+        "phone": "+7(921)556-74-27",
+        "date": "2025-05-26",
+        "logo": "2025-05-07-111653.png"
+    },
+    {
+        "name": "Ascon",
+        "description": "Saint-Petersburg, Odoevskovo street, 5 (\"Sportivnaya\" railway station)",
+        "phone": "+7(123)456-78-90",
+        "date": "2025-05-26",
+        "logo": "ascon_1748286029318.png"
+    }
+]
