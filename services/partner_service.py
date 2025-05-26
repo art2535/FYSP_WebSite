@@ -5,10 +5,12 @@ from services.validation import validate_partner_form
 
 def get_partners(data_file):
     """
-    Load partner companies from the JSON file.
-    Returns a dictionary with the list of companies.
+    Load partner companies from the JSON file and sort them by name in alphabetical order.
+    Returns a dictionary with the sorted list of companies.
     """
     companies = load_json(data_file) or []
+    # Sort companies by name in alphabetical order (case-insensitive)
+    companies.sort(key=lambda x: x['name'].lower())
     return {'companies': companies}
 
 def add_partners(form_data, logo, data_file, upload_dir):
