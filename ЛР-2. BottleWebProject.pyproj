@@ -61,6 +61,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="static\resources\avatars\" />
     <Folder Include="tests\" />
     <Folder Include="services\" />
     <Folder Include="static\" />
@@ -106,6 +107,10 @@
     <Content Include="static\fonts\Share-Tech-CYR-Italic-Bold.otf" />
     <Content Include="static\fonts\Share-Tech-CYR-Italic.otf" />
     <Content Include="static\fonts\Share-Tech-CYR.otf" />
+    <Content Include="static\resources\avatars\avatar1.jpg" />
+    <Content Include="static\resources\avatars\avatar2.jpg" />
+    <Content Include="static\resources\avatars\avatar3.jpg" />
+    <Content Include="static\resources\avatars\avatar4.jpg" />
     <Content Include="static\resources\news.json" />
     <Content Include="static\resources\buy_logo.png" />
     <Content Include="static\resources\cooler_img\cooler.png" />
@@ -148,11 +153,17 @@
     <Content Include="static\resources\random_access_memory_img\random_access_memory3.png" />
     <Content Include="static\resources\random_access_memory_img\random_access_memory4.png" />
     <Content Include="static\resources\random_access_memory_img\random_access_memory5.png" />
+    <Content Include="static\resources\reviews.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\resources\video_card_img\video_card.png" />
     <Content Include="static\resources\video_card_img\video_card2.png" />
     <Content Include="static\resources\video_card_img\video_card3.png" />
     <Content Include="static\resources\video_card_img\video_card4.png" />
     <Content Include="static\resources\video_card_img\video_card5.png" />
+    <Content Include="static\reviews.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
@@ -173,6 +184,9 @@
     </Content>
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
+    <Content Include="static\scripts\work_elements_reviews.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\scripts\_references.js" />
     <Content Include="views\auth.tpl" />
     <Content Include="views\constructor.tpl" />

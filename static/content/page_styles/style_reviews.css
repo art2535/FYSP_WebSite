@@ -111,7 +111,6 @@ body {
     color: #95a5a6;
 }
 
-/* Стили для формы добавления отзыва */
 .review-form {
     margin: 30px auto;
     padding: 30px;
@@ -151,14 +150,14 @@ body {
     .review-form textarea {
         resize: none;
         min-height: 150px;
-        max-width: 90%;
+        max-width: 50%;
         margin: 0 auto;
         display: block;
     }
 
 
     .review-form button {
-        padding: 10px 20px; /* уменьшили padding */
+        padding: 10px 20px;
         background-color: #2ecc71;
         color: white;
         border: none;
@@ -166,9 +165,9 @@ body {
         cursor: pointer;
         transition: background-color 0.3s ease;
         font-size: 1.1em;
-        width: auto; /* чтобы кнопка не растягивалась на всю ширину */
-        margin: 0 auto; /* выравниваем по центру */
-        display: block; /* для центровки */
+        width: auto;
+        margin: 0 auto;
+        display: block;
         margin-top: 20px;
     }
 
@@ -301,7 +300,7 @@ button[type="submit"] {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background: #f44336; /* красный */
+    background: #f44336;
     color: white;
     padding: 15px 25px;
     border-radius: 5px;
