@@ -1,5 +1,4 @@
-﻿reviews:
-<html lang="ru">
+﻿<html lang="ru">
 <head>
     % rebase('layout.tpl', title=title, year=year)
     <meta charset="UTF-8">
@@ -8,23 +7,51 @@
 </head>
 <body>
 
+% if errors:
+<div id="error-popup" class="error-popup">
+    <button onclick="hideError()" class="close-btn">×</button>
+    <ul>
+    % for err in errors:
+        <li>{{ err }}</li>
+    % end
+    </ul>
+</div>
+% end
+
 <div class="jumbotron">
     <h1>Reviews</h1>
     <p class="lead">Leave a review about our products and company</p>
+    <a class="leave-review-link" onclick="scrollToReviewForm()">Leave a review</a>
 </div>
 
-<div class="filters">
-    <button class="filter-button">All</button>
-    <button class="filter-button">About product</button>
-    <button class="filter-button">About company</button>
-    <button class="filter-button">New ones first</button>
-    <button class="filter-button">The old ones first</button>
-    <a href="#" class="leave-review-link" onclick="scrollToReviewForm()">Leave a review</a>
+<div class="filter-card">
+    <div class="filter-section">
+        <h2>Category</h2>
+        <div class="filters category-filters">
+            <button class="filter-button {{ 'active' if filter_category == 'all' else '' }}" onclick="setFilter('all')">All</button>
+            <button class="filter-button {{ 'active' if filter_category == 'product' else '' }}" onclick="setFilter('product')">About Product</button>
+            <button class="filter-button {{ 'active' if filter_category == 'company' else '' }}" onclick="setFilter('company')">About Company</button>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <h2>Filtering by</h2>
+        <div class="filters sort-filters">
+            <button class="filter-button {{ 'active' if sort_order == 'new' else '' }}" onclick="setSort('new')">Newest first</button>
+            <button class="filter-button {{ 'active' if sort_order == 'old' else '' }}" onclick="setSort('old')">Oldest first</button>
+        </div>
+    </div>
 </div>
+
+
+<form id="filter-form" method="GET" action="/reviews">
+    <input type="hidden" name="filter_category" id="filter_category" value="{{ filter_category or 'all' }}">
+    <input type="hidden" name="sort_order" id="sort_order" value="{{ sort_order or '' }}">
+</form>
 
 <div class="reviews-container" id="reviewsContainer">
     % for review in reviews:
-    <div class="review">
+    <div class="review" data-category="{{ review['category'] }}" data-date="{{ review['date'] }}">
         <img src="{{ review['avatar_url'] }}" alt="Avatar" class="avatar">
         <div class="review-content">
             <div class="top-info">
@@ -51,42 +78,31 @@
 <div class="review-form" id="reviewForm">
     <h2>Add your review</h2>
     <form method="POST" action="/reviews">
-        <div class="form-row">
-            <input type="text" name="nickname" placeholder="Your nickname" required>
-            <select name="category" id="category" required>
-                <option value="company">About company</option>
-                <option value="product">About product</option>
-            </select>
-            <input type="number" name="rating" max="5" min="1" placeholder="Rating (1-5)" required>
-        </div>
-        <div class="form-row product-row" id="product-field" style="display: none;">
-            <select name="product_id" id="product-select">
-                % for product in products:
-                    <option value="{{ product['id'] }}">{{ product['name'] }}</option>
-                % end
-            </select>
-        </div>
-        <textarea name="text" rows="5" placeholder="Write your review..." required></textarea>
-        <button type="submit">Send feedback</button>
-    </form>
+    <div class="form-row">
+        <input type="text" name="nickname" placeholder="Your nickname" required
+               value="{{ form_data['nickname'] }}">
+        <select name="category" id="category" required>
+            <option value="company" {{ 'selected' if form_data['category'] == 'company' else '' }}>About company</option>
+            <option value="product" {{ 'selected' if form_data['category'] == 'product' else '' }}>About product</option>
+        </select>
+        <input type="number" name="rating" max="5" min="1" placeholder="Rating (1-5)" required
+               value="{{ form_data['rating'] }}">
+    </div>
+    <div class="form-row product-row" id="product-field" style="display: {{ 'flex' if form_data['category'] == 'product' else 'none' }};">
+        <select name="product_id" id="product-select" {{ 'required' if form_data['category'] == 'product' else '' }}>
+            % for product in products:
+                <option value="{{ product['id'] }}" {{ 'selected' if form_data['product_id'] == product['id'] else '' }}>
+                    {{ product['name'] }}
+                </option>
+            % end
+        </select>
+    </div>
+    <textarea name="text" rows="5" placeholder="Write your review..." required>{{ form_data['text'] }}</textarea>
+    <button type="submit">Send feedback</button>
+</form>
 </div>
 
-<script>
-    document.getElementById('category').addEventListener('change', function() {
-        const productField = document.getElementById('product-field');
-        if (this.value === 'product') {
-            productField.style.display = 'flex';
-            document.getElementById('product-select').setAttribute('required', 'required');
-        } else {
-            productField.style.display = 'none';
-            document.getElementById('product-select').removeAttribute('required');
-        }
-    });
-
-    function scrollToReviewForm() {
-        document.getElementById('reviewForm').scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
+<script src="/static/scripts/work_elements_reviews.js"></script>
 
 </body>
 </html>
