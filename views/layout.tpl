@@ -27,6 +27,7 @@
                     <li><a href="/auth" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Authorization</a></li>
                     <li><a href="/constructor" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Constructor</a></li>
                     <li><a href="/profile" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Profile</a></li>
+                    <li><a href="/reviews" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Reviews</a></li>
                     <li><a href="/partners" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Partners</a></li>
                     <li><a href="/new_products" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">New products</a></li>
                 </ul>

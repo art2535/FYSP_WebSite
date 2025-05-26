@@ -4,6 +4,7 @@ import traceback
 from bottle import HTTPResponse  # Добавим этот импорт
 
 from services.partner_service import get_partners, add_partners
+from services.reviews_service import add_review, get_products, get_reviews
 from services.user_service import register_user, authenticate_user, logout_user
 from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news,find_images,enrich_news_items
 
@@ -73,6 +74,35 @@ def login():
 def logout():
     logout_user()
     redirect('/auth')
+
+@route('/reviews', method=['GET', 'POST'])
+@view('reviews')
+def reviews():
+    # If form is submitted (POST request)
+    if request.method == 'POST':
+        # Get form data
+        nickname = request.forms.get('nickname')
+        category = request.forms.get('category')
+        rating = int(request.forms.get('rating'))
+        text = request.forms.get('text')
+        product_id = request.forms.get('product_id')
+
+        # Add new review
+        add_review(nickname, category, rating, text, product_id)
+
+        # Redirect to reviews page after adding
+        redirect('/reviews')
+
+    # Get all reviews and products for display
+    reviews_data = get_reviews()
+    products_data = get_products()
+
+    return dict(
+        title='Reviews',
+        reviews=reviews_data,
+        products=products_data,
+        year=datetime.now().year
+    )
 
 @route('/partners')
 @view('partner')

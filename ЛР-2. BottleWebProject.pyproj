@@ -41,6 +41,9 @@
     <Compile Include="services\partner_service.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="services\reviews_service.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="services\user_service.py">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +89,12 @@
     <Content Include="static\content\page_styles\styles_constructor.css" />
     <Content Include="static\content\page_styles\styles_layout.css" />
     <Content Include="static\content\page_styles\styles_partners.css" />
+    <Content Include="static\content\page_styles\style_index.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="static\content\page_styles\style_reviews.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\content\site.css" />
     <Content Include="static\content\page_styles\styles_profile.css" />
     <Content Include="static\fonts\abosanovadcfr.ttf" />
@@ -131,6 +140,9 @@
     <Content Include="static\resources\processor_img\processor3.png" />
     <Content Include="static\resources\processor_img\processor4.png" />
     <Content Include="static\resources\processor_img\processor5.png" />
+    <Content Include="static\resources\products.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\resources\random_access_memory_img\random_access_memory.png" />
     <Content Include="static\resources\random_access_memory_img\random_access_memory2.png" />
     <Content Include="static\resources\random_access_memory_img\random_access_memory3.png" />
@@ -152,6 +164,9 @@
     <Content Include="static\scripts\jquery.validate.min.js" />
     <Content Include="static\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="static\scripts\modalWindow.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\scripts\modernizr-2.6.2.js" />
     <Content Include="static\scripts\new_products.js">
       <SubType>Code</SubType>
@@ -168,6 +183,9 @@
     </Content>
     <Content Include="views\partner.tpl" />
     <Content Include="views\profile.tpl" />
+    <Content Include="views\reviews.tpl">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

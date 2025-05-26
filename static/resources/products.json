@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Intel Core i9-12900K Processor"
+    },
+    {
+      "id": 2,
+      "name": "NVIDIA GeForce RTX 3080 Graphics Card"
+    },
+    {
+      "id": 3,
+      "name": "Samsung 970 EVO 1TB NVMe SSD"
+    },
+    {
+      "id": 4,
+      "name": "Corsair Vengeance 32GB DDR5 RAM"
+    },
+    {
+      "id": 5,
+      "name": "ASUS ROG Strix Z690 Motherboard"
+    }
+  ]
+}
