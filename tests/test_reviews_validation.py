@@ -19,12 +19,12 @@ class TestReviewLogic(unittest.TestCase):
     - get_reviews: Retrieve reviews with optional filtering and sorting
     - get_products: Retrieve the list of products
 
-    The shared reviews_data list is cleared before each test to ensure test isolation.
+    The shared reviews_data dict is cleared before each test to ensure test isolation.
     """
 
     def setUp(self):
         """
-        Clears the shared reviews_data list before each test to avoid data leakage
+        Clears the shared reviews_data dict before each test to avoid data leakage
         between tests and maintain independence.
         """
         reviews_data.clear()
@@ -64,14 +64,6 @@ class TestReviewLogic(unittest.TestCase):
         """
         errors = validate_review('abc!', 'company', '3', 'Good text', None)
         self.assertIn("Nickname can only contain letters and numbers, no special characters.", errors)
-
-    def test_validate_review_nickname_duplicate(self):
-        """
-        Tests that an error is returned if the nickname is already taken.
-        """
-        reviews_data.append({'nickname': 'testnick'})
-        errors = validate_review('testnick', 'company', '3', 'Good text', None)
-        self.assertIn("This nickname is already taken. Please choose another.", errors)
 
     def test_validate_review_rating_not_number(self):
         """
@@ -143,7 +135,8 @@ class TestReviewLogic(unittest.TestCase):
         success, errors = add_review('validuser', 'company', '5', 'Great product!', None)
         self.assertTrue(success)
         self.assertIsNone(errors)
-        self.assertTrue(any(r['nickname'] == 'validuser' for r in reviews_data))
+        self.assertIn('validuser', reviews_data)
+        self.assertEqual(len(reviews_data['validuser']), 1)
 
     def test_add_review_success_product(self):
         """
@@ -152,7 +145,7 @@ class TestReviewLogic(unittest.TestCase):
         success, errors = add_review('validuser2', 'product', '4', 'Nice product!', '1')
         self.assertTrue(success)
         self.assertIsNone(errors)
-        added = next(r for r in reviews_data if r['nickname'] == 'validuser2')
+        added = reviews_data['validuser2'][0]
         self.assertEqual(added['product_id'], '1')
         self.assertEqual(added['product_name'], 'Processor Intel Core i7 14700KF LGA1700 OEM')
 
@@ -170,11 +163,11 @@ class TestReviewLogic(unittest.TestCase):
         """
         Tests filtering of reviews by category.
         """
-        reviews_data.extend([
-            {'nickname': 'user1', 'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'},
-            {'nickname': 'user2', 'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'},
-            {'nickname': 'user3', 'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'},
-        ])
+        reviews_data.update({
+            'user1': [{'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'}],
+            'user2': [{'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'}],
+            'user3': [{'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'}],
+        })
         company_reviews = get_reviews(filter_category='company')
         self.assertEqual(len(company_reviews), 2)
         self.assertTrue(all(r['category'] == 'company' for r in company_reviews))
@@ -183,11 +176,11 @@ class TestReviewLogic(unittest.TestCase):
         """
         Tests retrieval of all reviews without filtering.
         """
-        reviews_data.extend([
-            {'nickname': 'user1', 'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'},
-            {'nickname': 'user2', 'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'},
-            {'nickname': 'user3', 'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'},
-        ])
+        reviews_data.update({
+            'user1': [{'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'}],
+            'user2': [{'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'}],
+            'user3': [{'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'}],
+        })
         all_reviews = get_reviews()
         self.assertEqual(len(all_reviews), 3)
 
@@ -195,11 +188,11 @@ class TestReviewLogic(unittest.TestCase):
         """
         Tests sorting of reviews by newest date first.
         """
-        reviews_data.extend([
-            {'nickname': 'user1', 'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'},
-            {'nickname': 'user2', 'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'},
-            {'nickname': 'user3', 'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'},
-        ])
+        reviews_data.update({
+            'user1': [{'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'}],
+            'user2': [{'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'}],
+            'user3': [{'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'}],
+        })
         sorted_new = get_reviews(sort_order='new')
         dates = [r['date'] for r in sorted_new]
         self.assertEqual(dates, sorted(dates, reverse=True))
@@ -208,11 +201,11 @@ class TestReviewLogic(unittest.TestCase):
         """
         Tests sorting of reviews by oldest date first.
         """
-        reviews_data.extend([
-            {'nickname': 'user1', 'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'},
-            {'nickname': 'user2', 'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'},
-            {'nickname': 'user3', 'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'},
-        ])
+        reviews_data.update({
+            'user1': [{'category': 'company', 'rating': 3, 'text': 'Good', 'date': '2025-05-24'}],
+            'user2': [{'category': 'product', 'rating': 5, 'text': 'Excellent', 'date': '2025-05-26'}],
+            'user3': [{'category': 'company', 'rating': 2, 'text': 'Bad', 'date': '2025-05-25'}],
+        })
         sorted_old = get_reviews(sort_order='old')
         dates = [r['date'] for r in sorted_old]
         self.assertEqual(dates, sorted(dates))
@@ -230,3 +223,5 @@ class TestReviewLogic(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
