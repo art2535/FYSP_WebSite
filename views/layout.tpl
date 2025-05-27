@@ -30,6 +30,7 @@
                     <li><a href="/reviews" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Reviews</a></li>
                     <li><a href="/partners" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Partners</a></li>
                     <li><a href="/new_products" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">New products</a></li>
+                    <li><a href="/articles" style="color: #333; font-family: Share-Tech-CYR-Bold; font-weight: bold; font-size: 20px; text-decoration: none;">Articles</a></li>
                 </ul>
             </div>
         </div>
