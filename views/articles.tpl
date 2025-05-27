@@ -7,7 +7,7 @@
         <h2>Useful Articles</h2>
         <p>Explore insightful articles on PC building, components, and technology trends.</p>
     </div>
-    <img src="/static/resources/logos/articles_icon.png" alt="Articles" class="constructor-logo">
+    <img src="/static/resources/logo.png" alt="Articles" class="constructor-logo">
 </div>
 
 <div class="container article-container">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            % if (index + 1) % 3 == 0 and not loop.last:
+            % if (index + 1) % 3 == 0 and index != len(articles) - 1:
                 </div><div class="row article-row">
             % end
         % end
