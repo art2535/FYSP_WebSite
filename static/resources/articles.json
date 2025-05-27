@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Understanding Modern CPUs",
+    "author": "Dr. Chip",
+    "text": "A deep dive into the architecture and performance of the latest generation of CPUs. We explore cores, threads, and clock speeds.",
+    "date": "2025-05-20"
+  },
+  {
+    "title": "Choosing the Right GPU for Gaming",
+    "author": "GamerX",
+    "text": "This guide helps you navigate the complex world of graphics cards to find the perfect fit for your gaming needs and budget.",
+    "date": "2025-05-15"
+  },
+  {
+    "title": "The Importance of RAM in PC Building",
+    "author": "Memory Master",
+    "text": "Learn how RAM affects your PC's performance and how to choose the right speed and capacity for your build.",
+    "date": "2025-05-10"
+  },
+  {
+    "title": "SSD vs. HDD: Which is Better for You?",
+    "author": "Storage Solutions",
+    "text": "An overview of Solid State Drives and Hard Disk Drives, comparing their pros and cons for different use cases.",
+    "date": "2025-04-28"
+  },
+  {
+    "title": "Cooling Your PC: Air vs. Liquid",
+    "author": "Cooling Expert",
+    "text": "Explore the differences between air and liquid cooling solutions to keep your PC components running optimally.",
+    "date": "2025-04-22"
+  }
+]
