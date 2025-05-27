@@ -7,6 +7,8 @@ from services.partner_service import get_partners, add_partners
 from services.reviews_service import add_review, get_form_data_from_request, get_products, get_reviews, validate_review
 from services.user_service import register_user, authenticate_user, logout_user
 from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news,find_images,enrich_news_items
+from services.article_service import load_articles, add_article, validate_article_form, delete_article
+
 
 @route('/')
 @route('/home')
@@ -155,6 +157,70 @@ def new_products():
     except Exception as e:
         from services.new_products_service import log_and_render_error
         return log_and_render_error(e)
+
+@route('/articles', method=['GET', 'POST'])
+@view('articles') # Assuming your template will be named articles.tpl
+def articles_page():
+    if request.method == 'POST':
+        delete_index_str = request.forms.get('delete_index')
+        if delete_index_str is not None:
+            try:
+                index = int(delete_index_str)
+                if delete_article(index):
+                    return HTTPResponse(status=303, location='/articles')
+                else:
+                    # Log or handle article not found for deletion
+                    print(f"Attempted to delete article at index {index}, but it was not found or failed.")
+            except ValueError:
+                print("Invalid delete index format.")
+            except Exception as e:
+                with open('error.log', 'a', encoding='utf-8') as log_file:
+                    log_file.write(f"{datetime.now()} ARTICLE DELETE ERROR: {str(e)}\n")
+                    traceback.print_exc(file=log_file)
+            return HTTPResponse(status=303, location='/articles') # Always redirect after a delete attempt
+
+        title = request.forms.get('title', '').strip()
+        author = request.forms.get('author', '').strip()
+        text = request.forms.get('text', '').strip()
+        date = request.forms.get('date', '').strip()
+
+        errors = validate_article_form(title, author, text, date)
+
+        if not errors:
+            try:
+                add_article(title, author, text, date)
+                return HTTPResponse(status=303, location='/articles')
+            except Exception as e:
+                with open('error.log', 'a', encoding='utf-8') as log_file:
+                    log_file.write(f"{datetime.now()} ARTICLE ADD ERROR: {str(e)}\n")
+                    traceback.print_exc(file=log_file)
+                current_articles = load_articles()
+                return dict(
+                    articles=current_articles,
+                    errors={'form': 'An internal error occurred while adding the article. Please try again.'},
+                    form_data={'title': title, 'author': author, 'text': text, 'date': date},
+                    year=datetime.now().year,
+                    title_page="Articles"
+                )
+        else:
+            current_articles = load_articles()
+            return dict(
+                articles=current_articles,
+                errors=errors,
+                form_data={'title': title, 'author': author, 'text': text, 'date': date},
+                year=datetime.now().year,
+                title_page="Articles"
+            )
+
+    # GET request
+    current_articles = load_articles()
+    return dict(
+        articles=current_articles,
+        errors={},
+        form_data={},
+        year=datetime.now().year,
+        title_page="Articles"
+    )
 
 
 @route('/logos/<filename>')
