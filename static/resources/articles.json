@@ -1,38 +1,58 @@
 [
   {
-    "title": "sdfsfsdf",
-    "author": "sdfgsdfdsg",
-    "text": "sdfsdfs",
-    "date": "2025-05-15"
+    "title": "gjhsgfsd",
+    "author": "sfsdfsdf",
+    "text": "sdfsfsfsdf",
+    "date": "2022-02-02",
+    "link": "http://asdasd.cs"
   },
   {
     "title": "Understanding Modern CPUs",
     "author": "Dr. Chip",
     "text": "A deep dive into the architecture and performance of the latest generation of CPUs. We explore cores, threads, and clock speeds.",
-    "date": "2025-05-20"
+    "date": "2025-05-20",
+    "link": "https://example.com/my-article"
+  },
+  {
+    "title": "sdfsfsdf",
+    "author": "sdfgsdfdsg",
+    "text": "sdfsdfs",
+    "date": "2025-05-15",
+    "link": "https://example.com/my-article"
   },
   {
     "title": "Choosing the Right GPU for Gaming",
     "author": "GamerX",
     "text": "This guide helps you navigate the complex world of graphics cards to find the perfect fit for your gaming needs and budget.",
-    "date": "2025-05-15"
+    "date": "2025-05-15",
+    "link": "https://example.com/my-article"
   },
   {
     "title": "The Importance of RAM in PC Building",
     "author": "Memory Master",
     "text": "Learn how RAM affects your PC's performance and how to choose the right speed and capacity for your build.",
-    "date": "2025-05-10"
+    "date": "2025-05-10",
+    "link": "https://example.com/my-article"
   },
   {
     "title": "SSD vs. HDD: Which is Better for You?",
     "author": "Storage Solutions",
     "text": "An overview of Solid State Drives and Hard Disk Drives, comparing their pros and cons for different use cases.",
-    "date": "2025-04-28"
+    "date": "2025-04-28",
+    "link": "https://example.com/my-article"
   },
   {
     "title": "Cooling Your PC: Air vs. Liquid",
     "author": "Cooling Expert",
     "text": "Explore the differences between air and liquid cooling solutions to keep your PC components running optimally.",
-    "date": "2025-04-22"
+    "date": "2025-04-22",
+    "link": "https://example.com/my-article"
+  },
+  {
+    "title": "ssdssd",
+    "author": "s",
+    "text": "ssasdasdasd",
+    "date": "2000-02-22",
+    "link": "https://hello"
   }
 ]
