@@ -2,34 +2,44 @@ import os
 import json
 from datetime import datetime
 import re
+import traceback  # Для логирования исключений
 
-ARTICLES_FILE = 'static/resources/articles.json'
+# Импорты из Bottle для работы с HTTP-ответами и шаблонами
+from bottle import HTTPResponse, template
+
+# Определение пути к файлу статей относительно текущего файла сервиса
+ARTICLES_FILE = os.path.join(os.path.dirname(__file__), '..', 'static',
+                             'resources', 'articles.json')
+
 
 def load_articles():
     """Loads articles from the JSON file, sorted by date descending."""
-    if os.path.exists(ARTICLES_FILE):
+    if os.path.exists(ARTICLES_FILE):  #
         try:
             with open(ARTICLES_FILE, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+                data = json.load(f)  #
                 if not isinstance(data, list):
                     return []
                 for article in data:
-                    if 'link' not in article:
-                        article['link'] = None
-                return sorted(data, key=lambda x: x.get('date', ''), reverse=True)
-        except json.JSONDecodeError:
+                    if 'link' not in article:  #
+                        article['link'] = None  #
+                return sorted(data, key=lambda x: x.get('date', ''),
+                              reverse=True)  #
+        except json.JSONDecodeError:  #
             return []
         except Exception:
             return []
     return []
 
+
 def save_articles(articles_list):
     """Saves the list of articles to the JSON file."""
     try:
         with open(ARTICLES_FILE, 'w', encoding='utf-8') as f:
-            json.dump(articles_list, f, ensure_ascii=False, indent=2)
+            json.dump(articles_list, f, ensure_ascii=False, indent=2)  #
     except Exception as e:
-        print(f"Error saving articles: {e}")
+        # В реальном приложении здесь должно быть более серьезное логирование
+        print(f"Error saving articles: {e}")  #
 
 
 def validate_article_form(title, author, text, date, link):
@@ -37,115 +47,190 @@ def validate_article_form(title, author, text, date, link):
     errors = {}
 
     # Title validation
-    if not title or not title.strip():
-        errors['title'] = "The 'Title' field cannot be empty."
-    elif len(title.strip()) <= 5:
-        errors['title'] = "The 'Title' field must be longer than 5 characters."
-    elif len(title.strip()) > 50:
-        errors['title'] = "The 'Title' field cannot exceed 50 characters."
+    title_stripped = title.strip()  #
+    if not title_stripped:  #
+        errors['title'] = "Поле 'Заголовок' не может быть пустым."
+    elif len(title_stripped) <= 5:  #
+        errors['title'] = "Поле 'Заголовок' должно содержать более 5 символов."
+    elif len(title_stripped) > 50:  #
+        errors['title'] = "Поле 'Заголовок' не должно превышать 50 символов."
 
     # Author validation
-    if not author or not author.strip():
-        errors['author'] = "The 'Author' field cannot be empty."
-    elif not re.match(r"^[A-Za-zА-Яа-яЁё\s]+$", author.strip()):
+    author_stripped = author.strip()  #
+    if not author_stripped:  #
+        errors['author'] = "Поле 'Автор' не может быть пустым."
+    elif not re.match(r"^[A-Za-zА-Яа-яЁё\s]+$", author_stripped):  #
         errors[
-            'author'] = "The 'Author' field must contain only letters and spaces."
-    elif not (2 <= len(author.strip()) <= 40):
-        errors[
-            'author'] = "The 'Author' field must be between 2 and 40 characters long."
+            'author'] = "Поле 'Автор' должно содержать только буквы и пробелы."
+    elif not (2 <= len(author_stripped) <= 40):  #
+        errors['author'] = "Поле 'Автор' должно содержать от 2 до 40 символов."
 
     # Text validation
-    if not text or not text.strip():
-        errors['text'] = "The 'Text' field cannot be empty."
-    elif len(text.strip()) < 10:
-        errors[
-            'text'] = "The 'Text' field must be at least 10 characters long."
+    text_stripped = text.strip()  #
+    if not text_stripped:  #
+        errors['text'] = "Поле 'Текст' не может быть пустым."
+    elif len(text_stripped) < 10:  #
+        errors['text'] = "Поле 'Текст' должно содержать не менее 10 символов."
 
     # Date validation
-    if not date or not date.strip():
-        errors['date'] = "The 'Date' field cannot be empty."
+    date_stripped = date.strip()  #
+    if not date_stripped:  #
+        errors['date'] = "Поле 'Дата' не может быть пустым."
     else:
         try:
-            article_date = datetime.strptime(date, '%Y-%m-%d').date()
-            if article_date > datetime.now().date():
-                errors['date'] = "The date cannot be in the future."
-        except ValueError:
-            errors['date'] = "Incorrect date format. Use YYYY-MM-DD."
+            article_date = datetime.strptime(date_stripped,
+                                             '%Y-%m-%d').date()  #
+            if article_date > datetime.now().date():  #
+                errors['date'] = "Дата не может быть в будущем."
+        except ValueError:  #
+            errors[
+                'date'] = "Некорректный формат даты. Используйте ГГГГ-ММ-ДД."
 
     # Link validation
-    if not link or not link.strip():
-        errors['link'] = "The 'Link' field cannot be empty."
+    if not link or not link.strip():  #
+        errors['link'] = "Поле 'Ссылка' не может быть пустым."
     else:
-        link_stripped = link.strip()
+        link_stripped = link.strip()  #
         if not (link_stripped.startswith(
-                'http://') or link_stripped.startswith('https://')):
+                'http://') or link_stripped.startswith('https://')):  #
             errors[
-                'link'] = "The link must start with 'http://' or 'https://'."
+                'link'] = "Ссылка должна начинаться с 'http://' или 'https://'."
         else:
-            # Check if there is something after http:// or https://
-            if link_stripped == 'http://' or link_stripped == 'https://':
+            if link_stripped == 'http://' or link_stripped == 'https://':  #
                 errors[
-                    'link'] = "The link must include a domain name after 'http://' or 'https://'."
+                    'link'] = "Ссылка должна содержать доменное имя после 'http://' или 'https://'."
             else:
-                # Extract the part after the scheme for domain validation
-                if link_stripped.startswith('http://'):
-                    domain_part_with_path = link_stripped[7:]
+                if link_stripped.startswith('http://'):  #
+                    domain_part_with_path = link_stripped[7:]  #
                 else:  # link_stripped.startswith('https://')
-                    domain_part_with_path = link_stripped[8:]
+                    domain_part_with_path = link_stripped[8:]  #
 
                 if not domain_part_with_path or domain_part_with_path.startswith(
-                        '/'):
+                        '/'):  #
                     errors[
-                        'link'] = "A valid domain name is required after 'http://' or 'https://'."
+                        'link'] = "Требуется действительное доменное имя после 'http://' или 'https://'."
                 else:
-                    # Get only the domain name (before the first slash, if any)
-                    domain_name = domain_part_with_path.split('/', 1)[0]
-                    if not domain_name:  # Double check if domain name became empty after split
-                        errors['link'] = "A valid domain name is required."
-                    elif ' ' in domain_name:
+                    domain_name = domain_part_with_path.split('/', 1)[0]  #
+                    if not domain_name:  #
                         errors[
-                            'link'] = "The domain name in the link cannot contain spaces."
-                    # Basic check for a dot in the domain name, or if it's 'localhost', or an IP address
-                    # This is a simplified check and doesn't cover all valid domain/IP cases but catches common errors.
-                    elif '.' not in domain_name and not (
-                            domain_name.lower() == "localhost" or re.match(
+                            'link'] = "Требуется действительное доменное имя."
+                    elif ' ' in domain_name:  #
+                        errors[
+                            'link'] = "Имя домена в ссылке не может содержать пробелов."
+                    else:
+                        is_localhost = domain_name.lower() == "localhost"  #
+                        is_ip_address = bool(re.match(
                             r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(:\d+)?$",
-                            domain_name)):
-                        errors[
-                            'link'] = "The link does not appear to have a valid domain name (e.g., example.com or an IP address)."
+                            domain_name))  #
 
-        # Overall length check for the link
-        if len(link_stripped) > 2048:
-            # Ensure this error doesn't overwrite a more specific one if both conditions are met
-            if 'link' not in errors:
-                errors[
-                    'link'] = "The link is too long (maximum 2048 characters)."
-            elif "The link is too long" not in errors[
-                'link']:  # Append if a different error is already there
-                errors[
-                    'link'] += " Also, the link is too long (maximum 2048 characters)."
+                        if not is_localhost and not is_ip_address:
+                            if '.' not in domain_name:  #
+                                errors[
+                                    'link'] = "Ссылка не содержит действительного доменного имени (например, example.com)."
+                            else:
+                                parts = domain_name.split('.')
+                                if len(parts) < 2 or not parts[-1]:
+                                    errors[
+                                        'link'] = "Структура доменного имени в ссылке неверна (например, example.com)."
+                                elif len(parts[-1]) < 2:
+                                    errors[
+                                        'link'] = "Домен верхнего уровня (например, '.com', '.org') должен содержать не менее 2 символов."
 
+        if len(link_stripped) > 2048:  #
+            if 'link' not in errors:  #
+                errors[
+                    'link'] = "Ссылка слишком длинная (максимум 2048 символов)."
+            elif "слишком длинная" not in errors['link']:  #
+                errors[
+                    'link'] += " Также, ссылка слишком длинная (максимум 2048 символов)."  #
     return errors
+
 
 def add_article(title, author, text, date, link):
     """Adds a new article to the list and saves it."""
-    articles_list = load_articles()
+    articles_list = load_articles()  #
     new_article = {
-        'title': title.strip(),
-        'author': author.strip(),
-        'text': text.strip(),
-        'date': date.strip(),
-        'link': link.strip()
+        'title': title.strip(),  #
+        'author': author.strip(),  #
+        'text': text.strip(),  #
+        'date': date.strip(),  #
+        'link': link.strip()  #
     }
-    articles_list.insert(0, new_article)
-    save_articles(articles_list)
+    articles_list.insert(0, new_article)  #
+    save_articles(articles_list)  #
     return new_article
 
-def delete_article(index):
-    """Deletes an article by its index."""
-    articles_list = load_articles()
-    if 0 <= index < len(articles_list):
-        del articles_list[index]
-        save_articles(articles_list)
-        return True
-    return False
+
+def delete_article(index):  #
+    """Deletes an article by its index. (Можно удалить, если не используется)"""
+    articles_list = load_articles()  #
+    if 0 <= index < len(articles_list):  #
+        del articles_list[index]  #
+        save_articles(articles_list)  #
+        return True  #
+    return False  #
+
+
+# --- Новые функции-обработчики для маршрутов ---
+
+def handle_articles_get_request():
+    """
+    Обрабатывает GET-запрос для страницы статей.
+    Загружает статьи и отображает их с помощью шаблона.
+    """
+    current_articles = load_articles()
+    # Убедитесь, что 'articles.tpl' доступен и правильно настроен
+    return template('articles',  # Имя вашего файла шаблона
+                    articles=current_articles,
+                    errors={},
+                    form_data={},  # Пустые данные формы для GET запроса
+                    year=datetime.now().year,
+                    title_page="Articles"  # Или "Статьи", если предпочитаете
+                    )
+
+
+def handle_articles_post_request(form_data_from_request):
+    """
+    Обрабатывает POST-запрос для добавления новой статьи.
+    Извлекает данные из формы, валидирует их, добавляет статью или возвращает ошибки.
+    """
+    title = form_data_from_request.get('title', '').strip()
+    author = form_data_from_request.get('author', '').strip()
+    text = form_data_from_request.get('text', '').strip()
+    date = form_data_from_request.get('date', '').strip()
+    link = form_data_from_request.get('link', '').strip()
+
+    form_data_to_template = {'title': title, 'author': author, 'text': text,
+                             'date': date, 'link': link}
+    errors = validate_article_form(title, author, text, date, link)
+
+    if not errors:
+        try:
+            add_article(title, author, text, date, link)
+            return HTTPResponse(status=303,
+                                location='/articles')  # Редирект после успешного добавления
+        except Exception as e:
+            # Логирование ошибки
+            error_log_message = f"{datetime.now()} ARTICLE ADD ERROR (from service): {str(e)}\n"
+            with open('error.log', 'a', encoding='utf-8') as log_file:
+                log_file.write(error_log_message)
+                traceback.print_exc(file=log_file)
+
+            current_articles = load_articles()
+            return template('articles',
+                            articles=current_articles,
+                            errors={
+                                'form': 'Произошла внутренняя ошибка при добавлении статьи. Пожалуйста, попробуйте еще раз.'},
+                            form_data=form_data_to_template,
+                            year=datetime.now().year,
+                            title_page="Articles"  # Или "Статьи"
+                            )
+    else:  # Если есть ошибки валидации
+        current_articles = load_articles()
+        return template('articles',
+                        articles=current_articles,
+                        errors=errors,
+                        form_data=form_data_to_template,
+                        year=datetime.now().year,
+                        title_page="Articles"  # Или "Статьи"
+                        )
