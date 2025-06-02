@@ -50,9 +50,9 @@ def validate_article_form(title, author, text, date, link):
     elif not re.match(r"^[A-Za-zА-Яа-яЁё\s]+$", author.strip()):
         errors[
             'author'] = "The 'Author' field must contain only letters and spaces."
-    elif not (1 <= len(author.strip()) <= 40):
+    elif not (2 <= len(author.strip()) <= 40):
         errors[
-            'author'] = "The 'Author' field must be between 1 and 40 characters long."
+            'author'] = "The 'Author' field must be between 2 and 40 characters long."
 
     # Text validation
     if not text or not text.strip():

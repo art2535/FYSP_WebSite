@@ -7,7 +7,7 @@
         <h2>Articles</h2>
         <p>Learn more about technologies and components.</p>
     </div>
-    <img src="/static/resources/logos_for_pages/article_logo.png" alt="Article Logo" class="constructor-logo">
+    <img src="/static/resources/logo.png" alt="Article Logo" class="constructor-logo">
 </div>
 
 <div class="container article-container">
