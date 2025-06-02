@@ -7,6 +7,8 @@ from services.partner_service import get_partners, add_partners
 from services.reviews_service import add_review, get_form_data_from_request, get_products, get_reviews, validate_review
 from services.user_service import register_user, authenticate_user, logout_user
 from services.new_products_service import load_news, save_news, validate_news_form, add_news, delete_news,find_images,enrich_news_items
+from services.article_service import handle_articles_get_request, handle_articles_post_request
+
 
 @route('/')
 @route('/home')
@@ -155,6 +157,13 @@ def new_products():
     except Exception as e:
         from services.new_products_service import log_and_render_error
         return log_and_render_error(e)
+
+@route('/articles', method=['GET', 'POST'])
+def articles_page():
+    if request.method == 'POST':
+        return handle_articles_post_request(request.forms)
+    else:
+        return handle_articles_get_request()
 
 
 @route('/logos/<filename>')

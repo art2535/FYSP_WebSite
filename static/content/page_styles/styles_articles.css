@@ -1,0 +1,204 @@
+/* Шапка страницы */
+.constructor-header {
+    background-color: orange; /* фон */
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px; /* скругление углов */
+}
+
+.constructor-header-text {
+    margin-left: 20px;
+}
+
+.constructor-header-text h2 {
+    margin-top: 0;
+    font-size: 6rem;
+}
+
+.constructor-header-text p {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.constructor-logo {
+    max-width: 150px;
+    height: auto;
+    margin: 0 20px;
+}
+
+/* Список статей */
+.article-container {
+    margin-bottom: 30px;
+}
+
+.article-row {
+    margin-bottom: 0;
+}
+
+.article-item {
+    margin-bottom: 30px;
+    display: flex;
+    padding: 0 15px;
+}
+
+/* Карточка статьи */
+.card {
+    border-left: 5px solid orange;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* лёгкий подъём */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.card-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-header small {
+    color: #555;
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    line-height: 1.6;
+    color: #444;
+    flex-grow: 1; /* занимает оставшееся место */
+}
+
+.card-body p {
+    font-size: 1.5rem;
+}
+
+.card-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+/* Кнопка удаления */
+.btn-delete {
+    background-color: #d9474d;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c9302c;
+    opacity: 0.9;
+}
+
+/* Форма добавления статьи */
+.article-form-container {
+    background: #fff3e0;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0 40px 0;
+}
+
+.article-form-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.article-form .form-group {
+    margin-bottom: 20px;
+}
+
+.article-form .form-group label {
+    font-weight: 500;
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 8px;
+    color: #454545;
+}
+
+.article-form .form-control {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-form .form-control:focus {
+    border-color: orange;
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+}
+
+.article-form textarea.form-control {
+    min-height: 120px;
+    resize: vertical; /* можно менять высоту */
+}
+
+/* Сообщения об ошибке */
+.error-message {
+    color: #d9534f;
+    font-size: 0.875em;
+    margin-top: 5px;
+    display: block;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+/* Кнопка отправки */
+.btn-submit {
+    background-color: #FF8C00;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #cc7000;
+}
+
+/* Правильный перенос карточек при малых экранах */
+.article-container .row {
+    display: flex;
+    flex-wrap: wrap;
+}

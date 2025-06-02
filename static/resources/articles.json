@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Understanding Modern CPUs",
+    "author": "Aditya Sunjava",
+    "text": "A detailed guide to comparing processors for optimal computing, covering cores, threads, and clock speeds.",
+    "date": "2025-05-20",
+    "link": "https://hackernoon.com/understanding-modern-cpu-architecture-part-1"
+  },
+  {
+    "title": "Choosing the Right GPU for Gaming",
+    "author": "Tom's Hardware",
+    "text": "A comprehensive guide to selecting the best graphics card for your gaming needs, considering performance and budget.",
+    "date": "2025-05-15",
+    "link": "https://www.tomshardware.com/reviews/best-gpus,4380.html"
+  },
+  {
+    "title": "The Importance of RAM in PC Building",
+    "author": "Crucial",
+    "text": "An overview of how RAM affects your PC's performance and tips on choosing the right speed and capacity.",
+    "date": "2025-05-10",
+    "link": "https://www.crucial.com/articles/about-memory/support-what-does-computer-memory-do"
+  },
+  {
+    "title": "SSD vs. HDD: Which is Better for You?",
+    "author": "Crucial",
+    "text": "A comparison between Solid State Drives and Hard Disk Drives, highlighting their pros and cons.",
+    "date": "2025-04-28",
+    "link": "https://www.crucial.com/articles/about-ssd/ssd-vs-hdd"
+  },
+  {
+    "title": "Cooling Your PC: Air vs. Liquid",
+    "author": "Kingston Technology",
+    "text": "An analysis of air and liquid cooling solutions to maintain optimal PC component temperatures.",
+    "date": "2025-04-22",
+    "link": "https://www.kingston.com/en/blog/gaming/air-vs-liquid-cooling-pc-builds"
+  },
+  {
+    "title": "Power Supplies Explained",
+    "author": "ACT Power",
+    "text": "An explanation of power supply functions and operations, including voltage conversion and distribution.",
+    "date": "2025-04-18",
+    "link": "https://www.actpower.com/blog/what-is-a-power-supply-and-how-does-it-work/"
+  },
+  {
+    "title": "How to Cable Manage Like a Pro",
+    "author": "WIRED",
+    "text": "Smart and low-effort ways for gamers to keep their cables organized and their setups tidy.",
+    "date": "2025-04-12",
+    "link": "https://www.wired.com/story/lazy-gamers-guide-cable-management/"
+  },
+  {
+    "title": "BIOS Settings for Beginners",
+    "author": "Simplilearn",
+    "text": "A beginner-friendly guide to understanding and configuring BIOS settings for improved system performance.",
+    "date": "2025-04-05",
+    "link": "https://www.simplilearn.com/what-is-bios-article"
+  },
+  {
+    "title": "Overclocking Safely: A Starter Guide",
+    "author": "Tom's Hardware",
+    "text": "An introduction to safe CPU and GPU overclocking practices, including risks, benefits, and stability testing.",
+    "date": "2025-03-29",
+    "link": "https://www.tomshardware.com/reviews/bios-beginners,1126.html"
+  }
+]
