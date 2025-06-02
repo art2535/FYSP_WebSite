@@ -1,94 +1,65 @@
 [
   {
-    "title": "asdasdasd",
-    "author": "sdfsdfsf",
-    "text": "sdssssssssssssssssssssss",
-    "date": "2025-06-01",
-    "link": "https://dsfsfsdf.cs"
-  },
-  {
-    "title": "sfsdfsdfsf",
-    "author": "sdfsdfsfsf",
-    "text": "sddfsfsfsfsf",
-    "date": "2025-06-01",
-    "link": "https://adad.c"
-  },
-  {
-    "title": "hdddddddd",
-    "author": "h",
-    "text": "hsssssssssssssssssssssssssssss",
-    "date": "2025-06-01",
-    "link": "https://sdf.com"
-  },
-  {
     "title": "Understanding Modern CPUs",
-    "author": "Dr. Chip",
-    "text": "A deep dive into the architecture and performance of the latest generation of CPUs. We explore cores, threads, and clock speeds.",
+    "author": "Aditya Sunjava",
+    "text": "A detailed guide to comparing processors for optimal computing, covering cores, threads, and clock speeds.",
     "date": "2025-05-20",
-    "link": "https://example.com/my-article"
-  },
-  {
-    "title": "sdfsfsdf",
-    "author": "sdfgsdfdsg",
-    "text": "sdfsdfs",
-    "date": "2025-05-15",
-    "link": "https://example.com/my-article"
+    "link": "https://hackernoon.com/understanding-modern-cpu-architecture-part-1"
   },
   {
     "title": "Choosing the Right GPU for Gaming",
-    "author": "GamerX",
-    "text": "This guide helps you navigate the complex world of graphics cards to find the perfect fit for your gaming needs and budget.",
+    "author": "Tom's Hardware",
+    "text": "A comprehensive guide to selecting the best graphics card for your gaming needs, considering performance and budget.",
     "date": "2025-05-15",
-    "link": "https://example.com/my-article"
+    "link": "https://www.tomshardware.com/reviews/best-gpus,4380.html"
   },
   {
     "title": "The Importance of RAM in PC Building",
-    "author": "Memory Master",
-    "text": "Learn how RAM affects your PC's performance and how to choose the right speed and capacity for your build.",
+    "author": "Crucial",
+    "text": "An overview of how RAM affects your PC's performance and tips on choosing the right speed and capacity.",
     "date": "2025-05-10",
-    "link": "https://example.com/my-article"
+    "link": "https://www.crucial.com/articles/about-memory/support-what-does-computer-memory-do"
   },
   {
     "title": "SSD vs. HDD: Which is Better for You?",
-    "author": "Storage Solutions",
-    "text": "An overview of Solid State Drives and Hard Disk Drives, comparing their pros and cons for different use cases.",
+    "author": "Crucial",
+    "text": "A comparison between Solid State Drives and Hard Disk Drives, highlighting their pros and cons.",
     "date": "2025-04-28",
-    "link": "https://example.com/my-article"
+    "link": "https://www.crucial.com/articles/about-ssd/ssd-vs-hdd"
   },
   {
     "title": "Cooling Your PC: Air vs. Liquid",
-    "author": "Cooling Expert",
-    "text": "Explore the differences between air and liquid cooling solutions to keep your PC components running optimally.",
+    "author": "Kingston Technology",
+    "text": "An analysis of air and liquid cooling solutions to maintain optimal PC component temperatures.",
     "date": "2025-04-22",
-    "link": "https://example.com/my-article"
+    "link": "https://www.kingston.com/en/blog/gaming/air-vs-liquid-cooling-pc-builds"
   },
   {
-    "title": "asdasd",
-    "author": "sdfsdfsdf",
-    "text": "sdffffffffffffffffffffffffffff",
-    "date": "2022-12-31",
-    "link": "https://sdfsf.sd"
+    "title": "Power Supplies Explained",
+    "author": "ACT Power",
+    "text": "An explanation of power supply functions and operations, including voltage conversion and distribution.",
+    "date": "2025-04-18",
+    "link": "https://www.actpower.com/blog/what-is-a-power-supply-and-how-does-it-work/"
   },
   {
-    "id": 11,
-    "title": "asdad",
-    "author": "sddfsdf",
-    "text": "sdfsdfsdfssdfsdf",
-    "date": "2022-12-31",
-    "link": "https://adada.cd"
+    "title": "How to Cable Manage Like a Pro",
+    "author": "WIRED",
+    "text": "Smart and low-effort ways for gamers to keep their cables organized and their setups tidy.",
+    "date": "2025-04-12",
+    "link": "https://www.wired.com/story/lazy-gamers-guide-cable-management/"
   },
   {
-    "title": "gjhsgfsd",
-    "author": "sfsdfsdf",
-    "text": "sdfsfsfsdf",
-    "date": "2022-02-02",
-    "link": "http://asdasd.cs"
+    "title": "BIOS Settings for Beginners",
+    "author": "Simplilearn",
+    "text": "A beginner-friendly guide to understanding and configuring BIOS settings for improved system performance.",
+    "date": "2025-04-05",
+    "link": "https://www.simplilearn.com/what-is-bios-article"
   },
   {
-    "title": "ssdssd",
-    "author": "s",
-    "text": "ssasdasdasd",
-    "date": "2000-02-22",
-    "link": "https://hello"
+    "title": "Overclocking Safely: A Starter Guide",
+    "author": "Tom's Hardware",
+    "text": "An introduction to safe CPU and GPU overclocking practices, including risks, benefits, and stability testing.",
+    "date": "2025-03-29",
+    "link": "https://www.tomshardware.com/reviews/bios-beginners,1126.html"
   }
 ]
